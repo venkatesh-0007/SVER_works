@@ -317,6 +317,111 @@
   }
 
   // --- 8. Event Listeners Initialization ---
+  // --- 8. Scroll-Linked Owner Photo Morph to Navbar Circle ---
+  function initOwnerPhotoMorph() {
+    const morphEl = document.getElementById('scrollMorphAvatar');
+    const navbarEmblem = document.getElementById('navbarEmblem');
+    const heroCanvas = document.querySelector('.hero-owner-canvas');
+
+    if (!morphEl || !navbarEmblem || !heroCanvas) return;
+
+    const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let ticking = false;
+
+    function onScrollOrTouch() {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+      // Distance over which the morph completes (approx height of initial viewport header/hero gap)
+      const maxScroll = Math.min(window.innerHeight * 0.42, 300);
+      const rawProgress = scrollY / Math.max(maxScroll, 120);
+      const progress = Math.min(Math.max(rawProgress, 0), 1);
+
+      if (isReducedMotion) {
+        if (progress >= 0.8) {
+          navbarEmblem.classList.add('has-docked-avatar');
+        } else {
+          navbarEmblem.classList.remove('has-docked-avatar');
+        }
+        ticking = false;
+        return;
+      }
+
+      if (progress <= 0.02) {
+        // At top: Hero is 100% full, navbar shows initial spark, morph hidden
+        morphEl.style.opacity = '0';
+        morphEl.style.visibility = 'hidden';
+        morphEl.style.transform = 'translate3d(-9999px, -9999px, 0)';
+        navbarEmblem.classList.remove('has-docked-avatar');
+        heroCanvas.style.transform = 'scale(1)';
+        heroCanvas.style.opacity = '1';
+      } else if (progress >= 0.96) {
+        // Scrolled past hero: Docked into navbar circle!
+        morphEl.style.opacity = '0';
+        morphEl.style.visibility = 'hidden';
+        morphEl.style.transform = 'translate3d(-9999px, -9999px, 0)';
+        navbarEmblem.classList.add('has-docked-avatar');
+        heroCanvas.style.transform = 'scale(0.92)';
+        heroCanvas.style.opacity = '0.25';
+      } else {
+        // Swiping / scrolling: Smoothly interpolate coordinates and scale!
+        navbarEmblem.classList.remove('has-docked-avatar');
+        morphEl.style.visibility = 'visible';
+
+        const heroRect = heroCanvas.getBoundingClientRect();
+        const navRect = navbarEmblem.getBoundingClientRect();
+
+        // Ease-in-out quadratic curve for fluid momentum
+        const ease = progress < 0.5
+          ? 2 * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+        // Start coordinates: Center of the owner's head/face in hero
+        const startCenterX = heroRect.left + heroRect.width / 2;
+        const startCenterY = heroRect.top + heroRect.height * 0.35;
+
+        // Target coordinates: Center of the navbar circle
+        const targetCenterX = navRect.left + navRect.width / 2;
+        const targetCenterY = navRect.top + navRect.height / 2;
+
+        const currentCenterX = startCenterX + (targetCenterX - startCenterX) * ease;
+        const currentCenterY = startCenterY + (targetCenterY - startCenterY) * ease;
+
+        // Start scale based on base 140px morph circle size
+        const startScale = Math.min(heroRect.width * 0.65, 200) / 140;
+        const endScale = 44 / 140; // scales precisely to 44px navbar circle
+        const currentScale = startScale + (endScale - startScale) * ease;
+
+        // Opacity smoothly increases and stays solid
+        const opacity = Math.min(progress * 5, 1);
+
+        morphEl.style.opacity = opacity.toString();
+        morphEl.style.transform = `translate3d(${currentCenterX - 70}px, ${currentCenterY - 70}px, 0) scale(${currentScale})`;
+
+        // Hero canvas gently recedes and dims
+        heroCanvas.style.transform = `scale(${1 - ease * 0.08})`;
+        heroCanvas.style.opacity = `${Math.max(1 - ease * 0.75, 0.25)}`;
+      }
+
+      ticking = false;
+    }
+
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(onScrollOrTouch);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', requestTick, { passive: true });
+    window.addEventListener('touchmove', requestTick, { passive: true });
+    window.addEventListener('resize', requestTick, { passive: true });
+
+    // Initial check
+    onScrollOrTouch();
+  }
+
+  // --- 9. Event Listeners Initialization ---
   function initEventListeners() {
     // Mobile Drawer
     if (mobileToggle) {
@@ -367,6 +472,7 @@
     initCarousel();
     initScrollSpy();
     setupImageFallbacks();
+    initOwnerPhotoMorph();
     initEventListeners();
   }
 })();

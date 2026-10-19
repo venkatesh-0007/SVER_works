@@ -21,9 +21,10 @@
   <meta property="og:image" content="public/images/visiting-card-front.png">
   <meta property="og:locale" content="en_IN">
 
-  <!-- Favicon & Canonical -->
+  <!-- Favicon & Touch Icons with Owner Photo -->
+  <link rel="icon" type="image/png" sizes="128x128" href="favicon.png">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://venkatesh-0007.github.io/SVER_works/">
 
   <!-- Google Fonts Preconnect & Stylesheets -->
@@ -71,10 +72,11 @@
        ========================================================================= -->
   <header class="site-header" id="siteHeader">
     <div class="container header-container">
-      <!-- Brand Logo / Emblem -->
+      <!-- Brand Logo / Emblem with Owner Avatar Morph Dock -->
       <a href="#hero" class="brand-identity" aria-label="Sri Venkateswara Electrical & Rewinding Works Home">
-        <div class="brand-emblem" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor">
+        <div class="brand-emblem" id="navbarEmblem" aria-hidden="true">
+          <img src="public/images/owner-avatar.webp" alt="Kamesh" class="navbar-avatar-img" id="navbarAvatarImg">
+          <svg class="navbar-icon-spark" id="navbarIconSpark" viewBox="0 0 24 24" fill="currentColor">
             <path d="M11 15H6l7-14v8h5l-7 14v-8z"/>
           </svg>
         </div>
@@ -1030,6 +1032,11 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Dynamic Scroll-Linked Morphing Avatar Element -->
+  <div class="scroll-morph-avatar" id="scrollMorphAvatar" aria-hidden="true">
+    <img src="public/images/owner-avatar.webp" alt="" width="140" height="140">
   </div>
 
   <!-- Toast Notification Alert -->
