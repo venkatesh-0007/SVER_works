@@ -1,8 +1,9 @@
 /**
  * Sri Venkateswara Electrical & Rewinding Works
- * Interactive JavaScript Engine
+ * Interactive JavaScript Engine with Bilingual Language Switcher (EN / TE)
  * 
  * Features:
+ * - Seamless instantaneous English / Telugu language switcher
  * - Dynamic config hydration from business-config.js
  * - vCard (.vcf) generator & downloader
  * - Visiting card accessible modal/lightbox
@@ -64,18 +65,19 @@
 
   // --- 2. vCard (.vcf) Generator ---
   function generateAndDownloadVcard() {
+    const isTelugu = currentLang === 'te';
     const vcardLines = [
       'BEGIN:VCARD',
       'VERSION:3.0',
-      `FN:${config.vcard?.formattedName || 'Kamesh - Sri Venkateswara Electrical'}`,
+      `FN:${isTelugu ? 'వి. కామేష్ - శ్రీ వెంకటేశ్వర ఎలక్ట్రికల్' : 'Kamesh - Sri Venkateswara Electrical'}`,
       `N:${config.owner};;;;`,
-      `ORG:${config.name}`,
-      `TITLE:${config.vcard?.title || 'Proprietor & Master Technician'}`,
+      `ORG:${isTelugu ? 'శ్రీ వెంకటేశ్వర రీ-వైండింగ్ వర్క్స్' : config.name}`,
+      `TITLE:${isTelugu ? 'ప్రొప్రైటర్ & మాస్టర్ టెక్నీషియన్' : 'Proprietor & Master Technician'}`,
       `TEL;TYPE=CELL,VOICE,PREF:${config.phone}`,
       config.secondaryPhone ? `TEL;TYPE=CELL,VOICE:${config.secondaryPhone}` : '',
       `ADR;TYPE=WORK:;;${config.address?.formatted || 'Innespeta, Opposite State Bank'};Rajahmundry;Andhra Pradesh;;India`,
       `URL:${config.mapsUrl}`,
-      `NOTE:${config.vcard?.note || 'Electrical Appliance Services & Motor Rewinding in Rajahmundry'}`,
+      `NOTE:${isTelugu ? 'ఎలక్ట్రికల్ ఉపకరణాల సర్వీస్ & మోటార్ రీవైండింగ్, రాజమండ్రి' : 'Electrical Appliance Services & Motor Rewinding in Rajahmundry'}`,
       'END:VCARD'
     ].filter(Boolean).join('\r\n');
 
@@ -94,7 +96,9 @@
       URL.revokeObjectURL(link.href);
     }
 
-    showToast('Contact Card (.vcf) Downloaded');
+    const toastMsg = (window.APP_TRANSLATIONS && window.APP_TRANSLATIONS[currentLang]?.toastDownloaded) 
+      || 'Contact Card (.vcf) Downloaded';
+    showToast(toastMsg);
   }
 
   // Simple, accessible toast notification
@@ -296,7 +300,71 @@
     onScrollOrTouch();
   }
 
-  // --- 8. Event Listeners Initialization ---
+  // --- 8. Bilingual Language Switcher Engine (English & Telugu) ---
+  let currentLang = localStorage.getItem('sver_lang') || 'en';
+
+  function applyLanguage(lang) {
+    if (!window.APP_TRANSLATIONS || !window.APP_TRANSLATIONS[lang]) return;
+    currentLang = lang;
+    localStorage.setItem('sver_lang', lang);
+
+    document.documentElement.lang = lang;
+    if (lang === 'te') {
+      document.body.classList.add('lang-te');
+      document.body.classList.remove('lang-en');
+    } else {
+      document.body.classList.add('lang-en');
+      document.body.classList.remove('lang-te');
+    }
+
+    // Update active state on all switcher buttons
+    document.querySelectorAll('[data-lang-choice]').forEach(btn => {
+      const isSelected = btn.getAttribute('data-lang-choice') === lang;
+      btn.classList.toggle('active', isSelected);
+      btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+      btn.setAttribute('aria-checked', isSelected ? 'true' : 'false');
+    });
+
+    // Update all text nodes marked with data-i18n
+    const dict = window.APP_TRANSLATIONS[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) {
+        el.textContent = dict[key];
+      }
+    });
+
+    // Update HTML nodes marked with data-i18n-html
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      if (dict[key] !== undefined) {
+        el.innerHTML = dict[key];
+      }
+    });
+
+    // Update dynamic WhatsApp URL with language-tailored inquiry text
+    const waMsg = dict.waInquiryMsg || config.whatsappDefaultMessage;
+    const waUrl = `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(waMsg)}`;
+    document.querySelectorAll('[data-action="whatsapp"]').forEach(el => {
+      el.setAttribute('href', waUrl);
+    });
+  }
+
+  function initLanguageSwitcher() {
+    // Add click listeners to all language switcher buttons across header, hero, and drawer
+    document.querySelectorAll('[data-lang-choice]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const selectedLang = btn.getAttribute('data-lang-choice');
+        applyLanguage(selectedLang);
+      });
+    });
+
+    // Apply stored or default language immediately
+    applyLanguage(currentLang);
+  }
+
+  // --- 9. Event Listeners Initialization ---
   function initEventListeners() {
     // Mobile Drawer
     if (mobileToggle) {
@@ -344,6 +412,7 @@
 
   function onReady() {
     hydrateDynamicLinks();
+    initLanguageSwitcher();
     initScrollSpy();
     setupImageFallbacks();
     initOwnerPhotoMorph();

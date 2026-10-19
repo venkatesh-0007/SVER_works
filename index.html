@@ -27,10 +27,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="canonical" href="https://venkatesh-0007.github.io/SVER_works/">
 
-  <!-- Google Fonts Preconnect & Stylesheets -->
+  <!-- Google Fonts Preconnect & Stylesheets (Outfit, Plus Jakarta Sans, and Noto Sans Telugu) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Core CSS -->
   <link rel="stylesheet" href="styles.css">
@@ -62,7 +62,7 @@
   }
   </script>
 </head>
-<body>
+<body class="lang-en">
 
   <!-- Accessible Skip to Main Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -81,25 +81,37 @@
           </svg>
         </div>
         <div class="brand-text-block">
-          <span class="brand-name">Sri Venkateswara</span>
-          <span class="brand-tagline">Electrical &amp; Rewinding Works</span>
+          <span class="brand-name" data-i18n="brandName">Sri Venkateswara</span>
+          <span class="brand-tagline" data-i18n="brandTagline">Electrical &amp; Rewinding Works</span>
         </div>
       </a>
 
       <!-- Desktop Navigation Links: Bio, Details, Services -->
       <nav class="desktop-nav" aria-label="Main Navigation">
-        <a href="#bio" class="nav-link">Bio</a>
-        <a href="#details" class="nav-link">Contact &amp; Location</a>
-        <a href="#services" class="nav-link">Services</a>
+        <a href="#bio" class="nav-link" data-i18n="navBio">Bio</a>
+        <a href="#details" class="nav-link" data-i18n="navDetails">Contact &amp; Location</a>
+        <a href="#services" class="nav-link" data-i18n="navServices">Services</a>
       </nav>
 
-      <!-- Header Action & Mobile Menu Toggle -->
+      <!-- Header Actions: Language Switcher, Call Button, Mobile Menu Toggle -->
       <div class="header-actions">
+        <!-- Language Switcher in Header -->
+        <div class="header-lang-switch" role="group" aria-label="Language Selector">
+          <button type="button" class="lang-btn active" data-lang-choice="en" aria-pressed="true" title="Switch to English">
+            <span class="lang-badge">EN</span>
+            <span>English</span>
+          </button>
+          <button type="button" class="lang-btn" data-lang-choice="te" aria-pressed="false" title="తెలుగులోకి మార్చండి">
+            <span class="lang-badge">తె</span>
+            <span>తెలుగు</span>
+          </button>
+        </div>
+
         <a href="tel:+919866394687" class="header-call-btn" data-action="phone" aria-label="Call Kamesh at Sri Venkateswara Electrical">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
-          <span>Call: +91 9866394687</span>
+          <span data-i18n="headerCall">Call: +91 9866394687</span>
         </a>
 
         <!-- Mobile Drawer Toggle -->
@@ -114,17 +126,32 @@
 
   <!-- Mobile Dropdown Drawer -->
   <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <!-- Language Card inside Mobile Drawer -->
+    <div class="drawer-lang-card">
+      <div class="drawer-lang-header">
+        <span>🌐 Choose Language / భాష:</span>
+      </div>
+      <div class="drawer-lang-buttons">
+        <button type="button" class="drawer-lang-btn active" data-lang-choice="en">
+          <span>🇬🇧 English</span>
+        </button>
+        <button type="button" class="drawer-lang-btn" data-lang-choice="te">
+          <span>🇮🇳 తెలుగు</span>
+        </button>
+      </div>
+    </div>
+
     <nav class="mobile-nav-list" aria-label="Mobile Navigation">
       <a href="#bio" class="mobile-nav-link">
-        <span>Bio &amp; About Kamesh</span>
+        <span data-i18n="drawerBio">Bio &amp; About Kamesh</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
       <a href="#details" class="mobile-nav-link">
-        <span>Phone, Location &amp; Card</span>
+        <span data-i18n="drawerDetails">Phone, Location &amp; Card</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
       <a href="#services" class="mobile-nav-link">
-        <span>Services &amp; Repairs</span>
+        <span data-i18n="drawerServices">Services &amp; Repairs</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
     </nav>
@@ -133,13 +160,13 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
         </svg>
-        Call Now: +91 9866394687
+        <span data-i18n="drawerCallBtn">Call Now: +91 9866394687</span>
       </a>
       <a href="https://wa.me/919866394687" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" data-action="whatsapp">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
         </svg>
-        WhatsApp Conversation
+        <span data-i18n="drawerWaBtn">WhatsApp Conversation</span>
       </a>
     </div>
   </div>
@@ -151,6 +178,23 @@
     <section class="hero-section" id="bio">
       <div class="hero-pattern" aria-hidden="true"></div>
       <div class="container hero-grid">
+
+        <!-- Top Language Switch Bar at Beginning of Page Content -->
+        <div class="hero-lang-bar" style="grid-column: 1 / -1;">
+          <span class="hero-lang-hint">
+            <span class="hero-lang-globe" aria-hidden="true">🌐</span>
+            <span data-i18n="langHint">Choose Language / భాషను ఎంచుకోండి:</span>
+          </span>
+          <div class="hero-lang-choices" role="radiogroup" aria-label="Select Language">
+            <button type="button" class="hero-lang-choice active" data-lang-choice="en" role="radio" aria-checked="true">
+              English
+            </button>
+            <button type="button" class="hero-lang-choice" data-lang-choice="te" role="radio" aria-checked="false">
+              తెలుగు
+            </button>
+          </div>
+        </div>
+
         <!-- Hero Owner Photo Spotlight Frame (Appears FIRST before introduction) -->
         <div class="hero-image-col">
           <div class="hero-owner-frame">
@@ -162,8 +206,8 @@
               
               <div class="hero-owner-badge">
                 <div class="hero-owner-info">
-                  <span class="hero-owner-title">Kamesh</span>
-                  <span class="hero-owner-role">Proprietor &amp; Master Technician</span>
+                  <span class="hero-owner-title" data-i18n="ownerName">Kamesh</span>
+                  <span class="hero-owner-role" data-i18n="ownerRole">Proprietor &amp; Master Technician</span>
                 </div>
                 <div class="verified-icon-badge" title="Verified Workshop Proprietor" aria-hidden="true">✓</div>
               </div>
@@ -175,25 +219,24 @@
         <div class="hero-content">
           <div class="hero-badge-pill">
             <span class="pulse-dot" aria-hidden="true"></span>
-            <span>Verified Local Workshop • Innespeta, Rajahmundry</span>
+            <span data-i18n="verifiedBadge">Verified Local Workshop • Innespeta, Rajahmundry</span>
           </div>
 
           <h1 class="hero-title">
-            Sri Venkateswara <span class="hero-title-highlight">Electrical &amp; Rewinding Works</span>
+            <span data-i18n="heroTitlePrefix">Sri Venkateswara</span> <span class="hero-title-highlight" data-i18n="heroTitleHighlight">Electrical &amp; Rewinding Works</span>
           </h1>
 
-          <div class="hero-telugu-banner" lang="te">
+          <div class="hero-telugu-banner" lang="te" data-i18n="heroTeluguBanner">
             శ్రీ వెంకటేశ్వర రీ-వైండింగ్ వర్క్స్
           </div>
 
           <div class="hero-owner-tag">
-            <span>Proprietor &amp; Master Technician:</span>
-            <strong>Kamesh</strong>
-            <span class="hero-owner-telugu">(వి. కామేష్)</span>
+            <span data-i18n="proprietorLabel">Proprietor &amp; Master Technician:</span>
+            <strong data-i18n="proprietorName">Kamesh (వి. కామేష్)</strong>
           </div>
 
-          <p class="hero-description">
-            Dedicated electrical appliance servicing and precision motor rewinding workshop located in Innespeta, Rajahmundry. Managed directly by <strong>Kamesh</strong> with extensive hands-on expertise in rewinding electric motors, repairing washing machines, refrigerators, air conditioners, water heaters, and home appliances. Customers deal directly with Kamesh—guaranteeing genuine diagnosis, transparent pricing, and dependable repairs.
+          <p class="hero-description" data-i18n="bioDescription">
+            Dedicated electrical appliance servicing and precision motor rewinding workshop located in Innespeta, Rajahmundry. Managed directly by Kamesh with extensive hands-on expertise in rewinding electric motors, repairing washing machines, refrigerators, air conditioners, water heaters, and home appliances. Customers deal directly with Kamesh—guaranteeing genuine diagnosis, transparent pricing, and dependable repairs.
           </p>
 
           <div class="hero-cta-group">
@@ -201,36 +244,36 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
-              <span>Call: +91 9866394687</span>
+              <span data-i18n="heroCallBtn">Call: +91 9866394687</span>
             </a>
 
             <a href="https://wa.me/919866394687" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" data-action="whatsapp" aria-label="Send WhatsApp message to Kamesh">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
               </svg>
-              <span>WhatsApp Us</span>
+              <span data-i18n="heroWaBtn">WhatsApp Us</span>
             </a>
 
             <a href="#services" class="btn btn-secondary-outline">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
               </svg>
-              <span>View Services</span>
+              <span data-i18n="heroServicesBtn">View Services</span>
             </a>
           </div>
 
           <div class="hero-badges-row">
             <div class="hero-mini-badge">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span>Motor Rewinding Specialist</span>
+              <span data-i18n="miniBadge1">Motor Rewinding Specialist</span>
             </div>
             <div class="hero-mini-badge">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span>All Home Appliances Serviced</span>
+              <span data-i18n="miniBadge2">All Home Appliances Serviced</span>
             </div>
             <div class="hero-mini-badge">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span>Opp. State Bank, Innespeta</span>
+              <span data-i18n="miniBadge3">Opp. State Bank, Innespeta</span>
             </div>
           </div>
         </div>
@@ -243,9 +286,9 @@
     <section class="visiting-card-section section-padding" id="details">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge">Contact &amp; Location</span>
-          <h2 class="section-title">Phone Numbers, Location &amp; Visiting Card</h2>
-          <p class="section-subtitle">
+          <span class="section-badge" data-i18n="detailsBadge">Contact &amp; Location</span>
+          <h2 class="section-title" data-i18n="detailsTitle">Phone Numbers, Location &amp; Visiting Card</h2>
+          <p class="section-subtitle" data-i18n="detailsSubtitle">
             Call Kamesh directly, start a WhatsApp chat, get turn-by-turn Google Maps directions, or save the contact file to your mobile phone.
           </p>
         </div>
@@ -256,9 +299,9 @@
             <div class="card-header-ribbon">
               <div class="card-header-content">
                 <div class="card-title-group">
-                  <h3>Sri Venkateswara Electrical &amp; Rewinding Works</h3>
-                  <span class="card-telugu-name" lang="te">శ్రీ వెంకటేశ్వర రీ-వైండింగ్ వర్క్స్</span>
-                  <span class="card-category-badge">Electrical Appliance Services</span>
+                  <h3 data-i18n="brandName">Sri Venkateswara Electrical &amp; Rewinding Works</h3>
+                  <span class="card-telugu-name" lang="te" data-i18n="heroTeluguBanner">శ్రీ వెంకటేశ్వర రీ-వైండింగ్ వర్క్స్</span>
+                  <span class="card-category-badge" data-i18n="cardCategory">Electrical Appliance Services</span>
                 </div>
                 <div class="card-emblem-small" aria-hidden="true">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -276,8 +319,8 @@
                   <img src="public/images/owner.webp" alt="Kamesh" width="72" height="72" loading="lazy" data-fallback="public/images/owner.png">
                 </div>
                 <div class="card-person-info">
-                  <h4>Kamesh</h4>
-                  <span class="card-person-role">Proprietor &amp; Lead Technician</span>
+                  <h4 data-i18n="ownerName">Kamesh</h4>
+                  <span class="card-person-role" data-i18n="cardRole">Proprietor &amp; Lead Technician</span>
                   <span class="card-person-telugu" lang="te">వి. కామేష్</span>
                 </div>
               </div>
@@ -291,9 +334,9 @@
                     </svg>
                   </div>
                   <div class="card-contact-data">
-                    <span class="card-contact-label">Primary Mobile &amp; WhatsApp</span>
+                    <span class="card-contact-label" data-i18n="cardPhoneLabel1">Primary Mobile &amp; WhatsApp</span>
                     <a href="tel:+919866394687" class="card-contact-value" data-action="phone">+91 9866394687</a>
-                    <span class="card-contact-sub">Available for repairs &amp; inquiries</span>
+                    <span class="card-contact-sub" data-i18n="cardPhoneSub1">Available for repairs &amp; inquiries</span>
                   </div>
                 </div>
 
@@ -304,9 +347,9 @@
                     </svg>
                   </div>
                   <div class="card-contact-data">
-                    <span class="card-contact-label">Alternative Phone (Visiting Card)</span>
+                    <span class="card-contact-label" data-i18n="cardPhoneLabel2">Alternative Phone (Visiting Card)</span>
                     <a href="tel:+918499909666" class="card-contact-value">+91 8499909666</a>
-                    <span class="card-contact-sub">Workshop direct line</span>
+                    <span class="card-contact-sub" data-i18n="cardPhoneSub2">Workshop direct line</span>
                   </div>
                 </div>
 
@@ -318,8 +361,8 @@
                     </svg>
                   </div>
                   <div class="card-contact-data">
-                    <span class="card-contact-label">Workshop Address &amp; Location</span>
-                    <span class="card-contact-value">D.No. 36-7-12, Innespeta, Opposite State Bank, Rajahmundry</span>
+                    <span class="card-contact-label" data-i18n="cardAddrLabel">Workshop Address &amp; Location</span>
+                    <span class="card-contact-value" data-i18n="cardAddrValue">Door No. 36-7-12, Innespeta, Opposite State Bank, Rajahmundry</span>
                     <span class="card-contact-sub" lang="te">డోర్ నెం. 36-7-12, ఇన్నాపేట, స్టేట్ బ్యాంక్ ఎదురుగా, రాజమండ్రి</span>
                   </div>
                 </div>
@@ -331,21 +374,21 @@
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                   </svg>
-                  <span>Call Now</span>
+                  <span data-i18n="cardBtnCall">Call Now</span>
                 </a>
 
                 <a href="https://wa.me/919866394687" target="_blank" rel="noopener noreferrer" class="card-btn btn-wa" data-action="whatsapp" aria-label="Open WhatsApp conversation with Kamesh">
                   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                   </svg>
-                  <span>WhatsApp</span>
+                  <span data-i18n="cardBtnWa">WhatsApp</span>
                 </a>
 
                 <a href="https://maps.app.goo.gl/VTHYkzrRNHAbTTAW9" target="_blank" rel="noopener noreferrer" class="card-btn btn-map" data-action="directions" aria-label="Open workshop location in Google Maps">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <polygon points="3 11 22 2 13 21 11 13 3 11"/>
                   </svg>
-                  <span>Directions</span>
+                  <span data-i18n="cardBtnDirections">Directions</span>
                 </a>
 
                 <button type="button" class="card-btn btn-vcf js-download-vcf" aria-label="Save Kamesh's contact to phone as vCard">
@@ -354,14 +397,14 @@
                     <polyline points="7 10 12 15 17 10"/>
                     <line x1="12" y1="15" x2="12" y2="3"/>
                   </svg>
-                  <span>Save Contact</span>
+                  <span data-i18n="cardBtnSave">Save Contact</span>
                 </button>
               </div>
 
               <!-- Physical Card View Component -->
               <div class="visiting-card-physical-preview">
                 <div class="card-preview-header">
-                  <h5>Official Physical Visiting Card</h5>
+                  <h5 data-i18n="cardPhysicalHeader">Official Physical Visiting Card</h5>
                   <button type="button" class="preview-expand-btn js-open-card-modal" aria-label="Enlarge visiting card image">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <polyline points="15 3 21 3 21 9"/>
@@ -369,7 +412,7 @@
                       <line x1="21" y1="3" x2="14" y2="10"/>
                       <line x1="3" y1="21" x2="10" y2="14"/>
                     </svg>
-                    <span>View Larger</span>
+                    <span data-i18n="cardViewLarger">View Larger</span>
                   </button>
                 </div>
 
@@ -380,7 +423,7 @@
                   </picture>
                   <div class="figure-overlay-hint" aria-hidden="true">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                    <span>Tap to zoom</span>
+                    <span data-i18n="cardZoomHint">Tap to zoom</span>
                   </div>
                 </figure>
               </div>
@@ -396,9 +439,9 @@
     <section class="services-section section-padding" id="services">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge">Verified Offerings</span>
-          <h2 class="section-title">Electrical Appliance &amp; Rewinding Services</h2>
-          <p class="section-subtitle">
+          <span class="section-badge" data-i18n="servicesBadge">Verified Offerings</span>
+          <h2 class="section-title" data-i18n="servicesTitle">Electrical Appliance &amp; Rewinding Services</h2>
+          <p class="section-subtitle" data-i18n="servicesSubtitle">
             Expert diagnostics, motor rewinding, and appliance repairs performed directly at our Innespeta workshop in Rajahmundry.
           </p>
         </div>
@@ -416,15 +459,14 @@
               </svg>
             </div>
             <div class="service-content">
-              <span class="service-telugu" lang="te">మోటార్ రీవైండింగ్</span>
-              <h3 class="service-title">Motor Rewinding &amp; Coil Works</h3>
-              <p class="service-desc">
+              <h3 class="service-title" data-i18n="service1Title">Motor Rewinding &amp; Coil Works</h3>
+              <p class="service-desc" data-i18n="service1Desc">
                 Precision copper coil rewinding, insulation replacement, and bench testing for single-phase &amp; three-phase motors, submersible pumps, and fan motors.
               </p>
               <ul class="service-feature-list">
-                <li>High-grade copper winding wire</li>
-                <li>Slot insulation &amp; varnish baking</li>
-                <li>Full load running diagnostics</li>
+                <li data-i18n="service1F1">High-grade copper winding wire</li>
+                <li data-i18n="service1F2">Slot insulation &amp; varnish baking</li>
+                <li data-i18n="service1F3">Full load running diagnostics</li>
               </ul>
             </div>
           </article>
@@ -440,15 +482,14 @@
               </svg>
             </div>
             <div class="service-content">
-              <span class="service-telugu" lang="te">వాషింగ్ మెషిన్ సర్వీస్</span>
-              <h3 class="service-title">Washing Machine Service &amp; Repair</h3>
-              <p class="service-desc">
+              <h3 class="service-title" data-i18n="service2Title">Washing Machine Service &amp; Repair</h3>
+              <p class="service-desc" data-i18n="service2Desc">
                 Comprehensive repair for semi-automatic and fully-automatic machines, including spin/wash motor replacement, drum bearing noise, drainage, and timer issues.
               </p>
               <ul class="service-feature-list">
-                <li>Motor rewinding &amp; replacement</li>
-                <li>Gearbox &amp; pulsator repairs</li>
-                <li>Drain pump &amp; water valve fixing</li>
+                <li data-i18n="service2F1">Motor rewinding &amp; replacement</li>
+                <li data-i18n="service2F2">Gearbox &amp; pulsator repairs</li>
+                <li data-i18n="service2F3">Drain pump &amp; water valve fixing</li>
               </ul>
             </div>
           </article>
@@ -464,15 +505,14 @@
               </svg>
             </div>
             <div class="service-content">
-              <span class="service-telugu" lang="te">ఫ్రిజ్ సర్వీస్ &amp; గ్యాస్ చార్జింగ్</span>
-              <h3 class="service-title">Refrigerator / Fridge Repairs</h3>
-              <p class="service-desc">
+              <h3 class="service-title" data-i18n="service3Title">Refrigerator / Fridge Repairs</h3>
+              <p class="service-desc" data-i18n="service3Desc">
                 Single and double-door refrigerator servicing, compressor wiring, thermostat diagnostics, cooling coil leakage repairs, and gas replenishment.
               </p>
               <ul class="service-feature-list">
-                <li>Cooling troubleshooting &amp; gas charging</li>
-                <li>Compressor relay &amp; capacitor check</li>
-                <li>Thermostat &amp; defrost timer service</li>
+                <li data-i18n="service3F1">Cooling troubleshooting &amp; gas charging</li>
+                <li data-i18n="service3F2">Compressor relay &amp; capacitor check</li>
+                <li data-i18n="service3F3">Thermostat &amp; defrost timer service</li>
               </ul>
             </div>
           </article>
@@ -487,15 +527,14 @@
               </svg>
             </div>
             <div class="service-content">
-              <span class="service-telugu" lang="te">ఏసీ సర్వీసింగ్ &amp; రిపేర్</span>
-              <h3 class="service-title">Air Conditioner (AC) Service</h3>
-              <p class="service-desc">
+              <h3 class="service-title" data-i18n="service4Title">Air Conditioner (AC) Service</h3>
+              <p class="service-desc" data-i18n="service4Desc">
                 Split and window AC electrical diagnostics, blower fan motor servicing, capacitor replacement, coil cleaning, and cooling optimization.
               </p>
               <ul class="service-feature-list">
-                <li>Blower fan motor rewinding</li>
-                <li>Electrical control wiring repair</li>
-                <li>General cleaning &amp; performance checks</li>
+                <li data-i18n="service4F1">Blower fan motor rewinding</li>
+                <li data-i18n="service4F2">Electrical control wiring repair</li>
+                <li data-i18n="service4F3">General cleaning &amp; performance checks</li>
               </ul>
             </div>
           </article>
@@ -511,15 +550,14 @@
               </svg>
             </div>
             <div class="service-content">
-              <span class="service-telugu" lang="te">గీజర్ సర్వీస్</span>
-              <h3 class="service-title">Geyser &amp; Water Heater Repairs</h3>
-              <p class="service-desc">
+              <h3 class="service-title" data-i18n="service5Title">Geyser &amp; Water Heater Repairs</h3>
+              <p class="service-desc" data-i18n="service5Desc">
                 Storage and instant water heater servicing, heating element replacement, thermostat calibration, thermal cutoff resets, and safety checks.
               </p>
               <ul class="service-feature-list">
-                <li>Heavy-duty copper heating elements</li>
-                <li>Thermostat &amp; safety cut-off repair</li>
-                <li>Current leakage &amp; earthing safety check</li>
+                <li data-i18n="service5F1">Heavy-duty copper heating elements</li>
+                <li data-i18n="service5F2">Thermostat &amp; safety cut-off repair</li>
+                <li data-i18n="service5F3">Current leakage &amp; earthing safety check</li>
               </ul>
             </div>
           </article>
@@ -536,15 +574,14 @@
               </svg>
             </div>
             <div class="service-content">
-              <span class="service-telugu" lang="te">కూలర్లు మరియు ఫ్యాన్లు</span>
-              <h3 class="service-title">Coolers, Ceiling &amp; Table Fans</h3>
-              <p class="service-desc">
+              <h3 class="service-title" data-i18n="service6Title">Coolers, Ceiling &amp; Table Fans</h3>
+              <p class="service-desc" data-i18n="service6Desc">
                 Repair, bushing/bearing replacement, copper coil rewinding, water pump replacements for all models of air coolers and domestic fans.
               </p>
               <ul class="service-feature-list">
-                <li>Ceiling fan speed drop &amp; capacitor fix</li>
-                <li>Cooler water pump &amp; swing motor service</li>
-                <li>Noiseless bearing &amp; shaft fitting</li>
+                <li data-i18n="service6F1">Ceiling fan speed drop &amp; capacitor fix</li>
+                <li data-i18n="service6F2">Cooler water pump &amp; swing motor service</li>
+                <li data-i18n="service6F3">Noiseless bearing &amp; shaft fitting</li>
               </ul>
             </div>
           </article>
@@ -560,15 +597,14 @@
               </svg>
             </div>
             <div class="service-content">
-              <span class="service-telugu" lang="te">మైక్రోవేవ్ ఒవెన్ సర్వీస్</span>
-              <h3 class="service-title">Microwave Oven Repairs</h3>
-              <p class="service-desc">
+              <h3 class="service-title" data-i18n="service7Title">Microwave Oven Repairs</h3>
+              <p class="service-desc" data-i18n="service7Desc">
                 Troubleshooting for no-heating issues, turntable motor replacements, high-voltage diode and capacitor tests, and fuse safety replacements.
               </p>
               <ul class="service-feature-list">
-                <li>Magnetron &amp; transformer inspection</li>
-                <li>Turntable plate motor replacement</li>
-                <li>Door interlock switch repairs</li>
+                <li data-i18n="service7F1">Magnetron &amp; transformer inspection</li>
+                <li data-i18n="service7F2">Turntable plate motor replacement</li>
+                <li data-i18n="service7F3">Door interlock switch repairs</li>
               </ul>
             </div>
           </article>
@@ -583,15 +619,14 @@
               </svg>
             </div>
             <div class="service-content">
-              <span class="service-telugu" lang="te">గ్రైండర్ &amp; మిక్సీ సర్వీస్</span>
-              <h3 class="service-title">Wet Grinders &amp; Mixers</h3>
-              <p class="service-desc">
+              <h3 class="service-title" data-i18n="service8Title">Wet Grinders &amp; Mixers</h3>
+              <p class="service-desc" data-i18n="service8Desc">
                 Domestic and commercial wet grinder motor rewinding, belt replacement, center shaft alignment, and mixer grinder coupler/carbon brush servicing.
               </p>
               <ul class="service-feature-list">
-                <li>Armature &amp; field coil rewinding</li>
-                <li>Drive belt &amp; stone roller alignment</li>
-                <li>Overload protector &amp; switch replacement</li>
+                <li data-i18n="service8F1">Armature &amp; field coil rewinding</li>
+                <li data-i18n="service8F2">Drive belt &amp; stone roller alignment</li>
+                <li data-i18n="service8F3">Overload protector &amp; switch replacement</li>
               </ul>
             </div>
           </article>
@@ -607,15 +642,14 @@
               </svg>
             </div>
             <div class="service-content">
-              <span class="service-telugu" lang="te">పాత వస్తువులు కొనడం / అమ్మడం</span>
-              <h3 class="service-title">Used Appliance Trade &amp; Exchange</h3>
-              <p class="service-desc">
+              <h3 class="service-title" data-i18n="service9Title">Used Appliance Trade &amp; Exchange</h3>
+              <p class="service-desc" data-i18n="service9Desc">
                 Buying and selling of refurbished, tested electric motors, fans, washing machines, and household appliances at fair, honest workshop prices.
               </p>
               <ul class="service-feature-list">
-                <li>Pre-tested refurbished appliances</li>
-                <li>Old motor &amp; appliance trade-in</li>
-                <li>Honest assessment &amp; fair rates</li>
+                <li data-i18n="service9F1">Pre-tested refurbished appliances</li>
+                <li data-i18n="service9F2">Old motor &amp; appliance trade-in</li>
+                <li data-i18n="service9F3">Honest assessment &amp; fair rates</li>
               </ul>
             </div>
           </article>
@@ -624,21 +658,21 @@
         <!-- Direct CTA at Bottom of Services -->
         <div class="services-cta-banner">
           <div class="services-cta-content">
-            <h3>Need an Appliance Repaired or Motor Rewound?</h3>
-            <p>Speak directly with Kamesh. Fast diagnostics and dependable service in Rajahmundry.</p>
+            <h3 data-i18n="servicesCtaTitle">Need an Appliance Repaired or Motor Rewound?</h3>
+            <p data-i18n="servicesCtaDesc">Speak directly with Kamesh. Fast diagnostics and dependable service in Rajahmundry.</p>
           </div>
           <div class="services-cta-buttons">
             <a href="tel:+919866394687" class="btn btn-primary-phone" data-action="phone">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
-              Call: +91 9866394687
+              <span data-i18n="servicesCtaCall">Call: +91 9866394687</span>
             </a>
             <a href="https://wa.me/919866394687" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" data-action="whatsapp">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
               </svg>
-              Chat On WhatsApp
+              <span data-i18n="servicesCtaWa">Chat On WhatsApp</span>
             </a>
           </div>
         </div>
@@ -652,19 +686,19 @@
   <footer class="site-footer">
     <div class="container footer-simple-wrap">
       <div class="footer-simple-brand">
-        <h4>Sri Venkateswara Electrical &amp; Rewinding Works</h4>
-        <span class="footer-telugu" lang="te">శ్రీ వెంకటేశ్వర రీ-వైండింగ్ వర్క్స్</span>
-        <p>Proprietor: Kamesh (వి. కామేష్) • Door No. 36-7-12, Opposite State Bank, Innespeta, Rajahmundry</p>
+        <h4 data-i18n="footerBrand">Sri Venkateswara Electrical &amp; Rewinding Works</h4>
+        <span class="footer-telugu" lang="te" data-i18n="footerTelugu">శ్రీ వెంకటేశ్వర రీ-వైండింగ్ వర్క్స్</span>
+        <p data-i18n="footerInfo">Proprietor: Kamesh (వి. కామేష్) • Door No. 36-7-12, Opposite State Bank, Innespeta, Rajahmundry</p>
       </div>
       <div class="footer-simple-links">
         <a href="tel:+919866394687" class="footer-simple-phone" data-action="phone">+91 9866394687</a>
         <span>•</span>
         <a href="tel:+918499909666" class="footer-simple-phone">+91 8499909666</a>
         <span>•</span>
-        <a href="https://maps.app.goo.gl/VTHYkzrRNHAbTTAW9" target="_blank" rel="noopener noreferrer" class="footer-simple-map" data-action="directions">Google Maps Location</a>
+        <a href="https://maps.app.goo.gl/VTHYkzrRNHAbTTAW9" target="_blank" rel="noopener noreferrer" class="footer-simple-map" data-action="directions" data-i18n="footerMapLink">Google Maps Location</a>
       </div>
       <div class="footer-bottom-bar">
-        <p>&copy; 2026 Sri Venkateswara Electrical &amp; Rewinding Works. All rights reserved.</p>
+        <p data-i18n="footerCopy">&copy; 2026 Sri Venkateswara Electrical &amp; Rewinding Works. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -677,21 +711,21 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
       </svg>
-      <span>Call</span>
+      <span data-i18n="barCall">Call</span>
     </a>
 
     <a href="https://wa.me/919866394687" target="_blank" rel="noopener noreferrer" class="action-bar-btn whatsapp-action" data-action="whatsapp" aria-label="Chat on WhatsApp">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
       </svg>
-      <span>WhatsApp</span>
+      <span data-i18n="barWa">WhatsApp</span>
     </a>
 
     <a href="https://maps.app.goo.gl/VTHYkzrRNHAbTTAW9" target="_blank" rel="noopener noreferrer" class="action-bar-btn directions-action" data-action="directions" aria-label="Get Directions on Google Maps">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <polygon points="3 11 22 2 13 21 11 13 3 11"/>
       </svg>
-      <span>Directions</span>
+      <span data-i18n="barDirections">Directions</span>
     </a>
   </aside>
 
@@ -701,7 +735,7 @@
   <div class="card-modal-backdrop" id="cardModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="card-modal-dialog">
       <div class="card-modal-header">
-        <h3 class="card-modal-title" id="modalTitle">Sri Venkateswara Visiting Card</h3>
+        <h3 class="card-modal-title" id="modalTitle" data-i18n="modalTitle">Sri Venkateswara Visiting Card</h3>
         <button type="button" class="modal-close-btn js-close-card-modal" aria-label="Close visiting card view">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"/>
@@ -720,7 +754,7 @@
           <a href="tel:+919866394687" class="btn btn-primary-phone" style="padding: 0.5rem 1rem; font-size: 0.8125rem;" data-action="phone">
             Call
           </a>
-          <button type="button" class="btn btn-secondary-outline js-close-card-modal" style="color: var(--color-navy); border-color: var(--color-border); padding: 0.5rem 1rem; font-size: 0.8125rem;">
+          <button type="button" class="btn btn-secondary-outline js-close-card-modal" style="color: var(--color-navy); border-color: var(--color-border); padding: 0.5rem 1rem; font-size: 0.8125rem;" data-i18n="modalClose">
             Close
           </button>
         </div>
@@ -741,8 +775,9 @@
     <span class="toast-msg">Contact Card (.vcf) Downloaded</span>
   </div>
 
-  <!-- Core Scripts -->
+  <!-- Core Scripts & Translations -->
   <script src="business-config.js"></script>
+  <script src="translations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
