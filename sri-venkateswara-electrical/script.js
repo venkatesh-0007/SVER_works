@@ -332,9 +332,9 @@
     function onScrollOrTouch() {
       const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-      // Distance over which the morph completes (approx height of initial viewport header/hero gap)
-      const maxScroll = Math.min(window.innerHeight * 0.42, 300);
-      const rawProgress = scrollY / Math.max(maxScroll, 120);
+      // Distance over which the morph completes as user scrolls past the top owner photo
+      const maxScroll = Math.min(window.innerHeight * 0.35, 240);
+      const rawProgress = scrollY / Math.max(maxScroll, 100);
       const progress = Math.min(Math.max(rawProgress, 0), 1);
 
       if (isReducedMotion) {
@@ -348,37 +348,37 @@
       }
 
       if (progress <= 0.02) {
-        // At top: Hero is 100% full, navbar shows initial spark, morph hidden
+        // At top: Hero owner photo is 100% full & visible, navbar shows initial spark, morph hidden
         morphEl.style.opacity = '0';
         morphEl.style.visibility = 'hidden';
         morphEl.style.transform = 'translate3d(-9999px, -9999px, 0)';
         navbarEmblem.classList.remove('has-docked-avatar');
         heroCanvas.style.transform = 'scale(1)';
         heroCanvas.style.opacity = '1';
-      } else if (progress >= 0.96) {
-        // Scrolled past hero: Docked into navbar circle!
+      } else if (progress >= 0.95) {
+        // Scrolled down: Completely docked into the navbar circle!
         morphEl.style.opacity = '0';
         morphEl.style.visibility = 'hidden';
         morphEl.style.transform = 'translate3d(-9999px, -9999px, 0)';
         navbarEmblem.classList.add('has-docked-avatar');
-        heroCanvas.style.transform = 'scale(0.92)';
-        heroCanvas.style.opacity = '0.25';
+        heroCanvas.style.transform = 'scale(0.88)';
+        heroCanvas.style.opacity = '0.2';
       } else {
-        // Swiping / scrolling: Smoothly interpolate coordinates and scale!
+        // Swiping / scrolling: Smoothly interpolate coordinates and scale into the navbar circle!
         navbarEmblem.classList.remove('has-docked-avatar');
         morphEl.style.visibility = 'visible';
 
         const heroRect = heroCanvas.getBoundingClientRect();
         const navRect = navbarEmblem.getBoundingClientRect();
 
-        // Ease-in-out quadratic curve for fluid momentum
+        // Smooth cubic ease-in-out for natural gradual merge
         const ease = progress < 0.5
-          ? 2 * progress * progress
-          : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+          ? 4 * progress * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
 
-        // Start coordinates: Center of the owner's head/face in hero
+        // Start coordinates: Center of the owner's face in the top hero frame
         const startCenterX = heroRect.left + heroRect.width / 2;
-        const startCenterY = heroRect.top + heroRect.height * 0.35;
+        const startCenterY = heroRect.top + heroRect.height * 0.32;
 
         // Target coordinates: Center of the navbar circle
         const targetCenterX = navRect.left + navRect.width / 2;
@@ -387,20 +387,20 @@
         const currentCenterX = startCenterX + (targetCenterX - startCenterX) * ease;
         const currentCenterY = startCenterY + (targetCenterY - startCenterY) * ease;
 
-        // Start scale based on base 140px morph circle size
-        const startScale = Math.min(heroRect.width * 0.65, 200) / 140;
-        const endScale = 44 / 140; // scales precisely to 44px navbar circle
+        // Scale interpolation
+        const startScale = Math.min(heroRect.width * 0.62, 180) / 140;
+        const endScale = 44 / 140; // scales to 44px navbar circle
         const currentScale = startScale + (endScale - startScale) * ease;
 
-        // Opacity smoothly increases and stays solid
-        const opacity = Math.min(progress * 5, 1);
+        // Opacity ramps up smoothly
+        const opacity = Math.min(progress * 4, 1);
 
         morphEl.style.opacity = opacity.toString();
         morphEl.style.transform = `translate3d(${currentCenterX - 70}px, ${currentCenterY - 70}px, 0) scale(${currentScale})`;
 
-        // Hero canvas gently recedes and dims
-        heroCanvas.style.transform = `scale(${1 - ease * 0.08})`;
-        heroCanvas.style.opacity = `${Math.max(1 - ease * 0.75, 0.25)}`;
+        // Hero canvas gently scales and dims as it merges into the navbar
+        heroCanvas.style.transform = `scale(${1 - ease * 0.12})`;
+        heroCanvas.style.opacity = `${Math.max(1 - ease * 0.8, 0.2)}`;
       }
 
       ticking = false;

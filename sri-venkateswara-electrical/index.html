@@ -161,7 +161,27 @@
     <section class="hero-section" id="hero">
       <div class="hero-pattern" aria-hidden="true"></div>
       <div class="container hero-grid">
-        <!-- Hero Text & CTA -->
+        <!-- Hero Owner Photo Spotlight Frame (Appears FIRST before introduction) -->
+        <div class="hero-image-col">
+          <div class="hero-owner-frame">
+            <div class="hero-owner-canvas">
+              <picture>
+                <source srcset="public/images/owner.webp" type="image/webp">
+                <img src="public/images/owner.png" alt="Kamesh, Proprietor of Sri Venkateswara Electrical & Rewinding Works in Rajahmundry" class="hero-owner-img" width="543" height="724" loading="eager" fetchpriority="high" data-fallback="public/images/owner.jpg">
+              </picture>
+              
+              <div class="hero-owner-badge">
+                <div class="hero-owner-info">
+                  <span class="hero-owner-title">Kamesh</span>
+                  <span class="hero-owner-role">Proprietor &amp; Master Technician</span>
+                </div>
+                <div class="verified-icon-badge" title="Verified Workshop Proprietor" aria-hidden="true">✓</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Text & CTA (Introduction) -->
         <div class="hero-content">
           <div class="hero-badge-pill">
             <span class="pulse-dot" aria-hidden="true"></span>
@@ -223,26 +243,6 @@
             <div class="hero-mini-badge">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
               <span>Opp. State Bank, Innespeta</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Hero Owner Photo Spotlight Frame -->
-        <div class="hero-image-col">
-          <div class="hero-owner-frame">
-            <div class="hero-owner-canvas">
-              <picture>
-                <source srcset="public/images/owner.webp" type="image/webp">
-                <img src="public/images/owner.png" alt="Kamesh, Proprietor of Sri Venkateswara Electrical & Rewinding Works in Rajahmundry" class="hero-owner-img" width="543" height="724" loading="eager" fetchpriority="high" data-fallback="public/images/owner.jpg">
-              </picture>
-              
-              <div class="hero-owner-badge">
-                <div class="hero-owner-info">
-                  <span class="hero-owner-title">Kamesh</span>
-                  <span class="hero-owner-role">Proprietor &amp; Master Technician</span>
-                </div>
-                <div class="verified-icon-badge" title="Verified Workshop Proprietor" aria-hidden="true">✓</div>
-              </div>
             </div>
           </div>
         </div>

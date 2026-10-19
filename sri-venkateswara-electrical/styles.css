@@ -558,7 +558,7 @@ ul, ol {
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
+  gap: 2rem;
   align-items: center;
   position: relative;
   z-index: 2;
@@ -566,7 +566,7 @@ ul, ol {
 
 @media (min-width: 960px) {
   .hero-grid {
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 0.88fr 1.12fr;
     gap: 3.5rem;
   }
 }
@@ -773,17 +773,24 @@ ul, ol {
 .hero-owner-frame {
   position: relative;
   width: 100%;
-  max-width: 360px;
+  max-width: 290px;
+  margin: 0 auto;
   border-radius: var(--radius-xl);
-  background: linear-gradient(180deg, rgba(245, 166, 35, 0.15) 0%, rgba(20, 36, 58, 0.6) 100%);
-  padding: 10px;
-  box-shadow: var(--shadow-xl), 0 0 35px rgba(245, 166, 35, 0.15);
-  border: 1.5px solid rgba(245, 166, 35, 0.35);
+  background: linear-gradient(180deg, rgba(245, 166, 35, 0.25) 0%, rgba(20, 36, 58, 0.75) 100%);
+  padding: 8px;
+  box-shadow: var(--shadow-xl), 0 0 35px rgba(245, 166, 35, 0.2);
+  border: 1.5px solid rgba(245, 166, 35, 0.45);
+}
+
+@media (min-width: 960px) {
+  .hero-owner-frame {
+    max-width: 350px;
+  }
 }
 
 .hero-owner-canvas {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 4.8;
   background: radial-gradient(circle at 50% 30%, #223D61 0%, #14243A 90%);
   border-radius: calc(var(--radius-xl) - 8px);
   overflow: hidden;
@@ -810,15 +817,15 @@ ul, ol {
 
 .hero-owner-badge {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  background: rgba(13, 24, 39, 0.9);
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(13, 24, 39, 0.92);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(245, 166, 35, 0.4);
-  border-radius: var(--radius-lg);
-  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  padding: 0.6rem 0.85rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
