@@ -1853,9 +1853,67 @@ ul, ol {
 .site-footer {
   background-color: var(--color-navy);
   color: #CBD5E1;
-  padding-top: 3.5rem;
+  padding-top: 3rem;
   padding-bottom: 2rem;
   border-top: 3px solid var(--color-orange);
+}
+
+.footer-simple-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.footer-simple-brand h4 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.35rem;
+}
+
+.footer-simple-brand .footer-telugu {
+  color: var(--color-orange);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.footer-simple-brand p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #94A3B8;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.footer-simple-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.footer-simple-phone,
+.footer-simple-map {
+  color: var(--color-orange);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.footer-simple-phone:hover,
+.footer-simple-map:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.footer-simple-links span {
+  color: rgba(255, 255, 255, 0.25);
 }
 
 .footer-grid {

@@ -5,9 +5,9 @@
  * Features:
  * - Dynamic config hydration from business-config.js
  * - vCard (.vcf) generator & downloader
- * - Touch & swipe responsive image carousel
  * - Visiting card accessible modal/lightbox
  * - Mobile drawer navigation & active scroll spy
+ * - Scroll-linked owner photo morph into navbar emblem
  * - Graceful image error fallbacks
  */
 
@@ -36,14 +36,6 @@
   const closeModalBtns = document.querySelectorAll('.js-close-card-modal');
   const downloadVcfBtns = document.querySelectorAll('.js-download-vcf');
   const toastNotice = document.getElementById('toastNotice');
-
-  // Carousel Elements
-  const carouselTrack = document.getElementById('carouselTrack');
-  const prevBtn = document.getElementById('carouselPrev');
-  const nextBtn = document.getElementById('carouselNext');
-  const indicatorsContainer = document.getElementById('carouselIndicators');
-  const counterCurrent = document.getElementById('carouselCounterCurrent');
-  const counterTotal = document.getElementById('carouselCounterTotal');
 
   // --- 1. Dynamic Contact & Link Binding ---
   function hydrateDynamicLinks() {
@@ -117,123 +109,7 @@
     }, 3200);
   }
 
-  // --- 3. Carousel Component ---
-  function initCarousel() {
-    if (!carouselTrack) return;
-
-    const slides = carouselTrack.querySelectorAll('.carousel-slide');
-    const totalSlides = slides.length;
-    if (totalSlides === 0) return;
-
-    if (counterTotal) counterTotal.textContent = totalSlides;
-
-    // Build indicator dots dynamically
-    if (indicatorsContainer) {
-      indicatorsContainer.innerHTML = '';
-      slides.forEach((_, idx) => {
-        const dot = document.createElement('button');
-        dot.className = `indicator-dot ${idx === 0 ? 'active' : ''}`;
-        dot.setAttribute('role', 'tab');
-        dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
-        dot.addEventListener('click', () => goToSlide(idx));
-        indicatorsContainer.appendChild(dot);
-      });
-    }
-
-    let currentIndex = 0;
-
-    function updateCarouselState(index) {
-      currentIndex = Math.max(0, Math.min(index, totalSlides - 1));
-
-      // Update counter
-      if (counterCurrent) counterCurrent.textContent = currentIndex + 1;
-
-      // Update indicator dots
-      if (indicatorsContainer) {
-        const dots = indicatorsContainer.querySelectorAll('.indicator-dot');
-        dots.forEach((dot, idx) => {
-          dot.classList.toggle('active', idx === currentIndex);
-          dot.setAttribute('aria-selected', idx === currentIndex ? 'true' : 'false');
-        });
-      }
-    }
-
-    function goToSlide(index) {
-      const targetSlide = slides[index];
-      if (targetSlide) {
-        carouselTrack.scrollTo({
-          left: targetSlide.offsetLeft,
-          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-        });
-        updateCarouselState(index);
-      }
-    }
-
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        const newIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
-        goToSlide(newIndex);
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        const newIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
-        goToSlide(newIndex);
-      });
-    }
-
-    // Scroll listener to update dots on touch scroll
-    let scrollTimeout;
-    carouselTrack.addEventListener('scroll', () => {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        const scrollLeft = carouselTrack.scrollLeft;
-        const slideWidth = carouselTrack.clientWidth;
-        const newIdx = Math.round(scrollLeft / slideWidth);
-        updateCarouselState(newIdx);
-      }, 50);
-    }, { passive: true });
-
-    // Touch swipe gesture support for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    carouselTrack.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    carouselTrack.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    }, { passive: true });
-
-    function handleSwipe() {
-      const threshold = 45;
-      if (touchStartX - touchEndX > threshold) {
-        // Swiped left -> next
-        if (currentIndex < totalSlides - 1) {
-          goToSlide(currentIndex + 1);
-        }
-      } else if (touchEndX - touchStartX > threshold) {
-        // Swiped right -> prev
-        if (currentIndex > 0) {
-          goToSlide(currentIndex - 1);
-        }
-      }
-    }
-
-    // Keyboard navigation within carousel
-    carouselTrack.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') {
-        goToSlide(Math.max(0, currentIndex - 1));
-      } else if (e.key === 'ArrowRight') {
-        goToSlide(Math.min(totalSlides - 1, currentIndex + 1));
-      }
-    });
-  }
-
-  // --- 4. Visiting Card Modal / Lightbox ---
+  // --- 3. Visiting Card Modal / Lightbox ---
   function openCardModal() {
     if (!cardModal) return;
     cardModal.classList.add('open');
@@ -252,7 +128,7 @@
     document.body.style.overflow = '';
   }
 
-  // --- 5. Mobile Navigation Drawer ---
+  // --- 4. Mobile Navigation Drawer ---
   function toggleMobileMenu() {
     if (!mobileDrawer || !mobileToggle) return;
     const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
@@ -266,7 +142,7 @@
     mobileDrawer.classList.remove('open');
   }
 
-  // --- 6. Active Scroll Spy ---
+  // --- 5. Active Scroll Spy ---
   function initScrollSpy() {
     const navLinks = document.querySelectorAll('.desktop-nav .nav-link, .mobile-nav-link');
     const sections = document.querySelectorAll('section[id]');
@@ -297,7 +173,7 @@
     sections.forEach((sec) => observer.observe(sec));
   }
 
-  // --- 7. Missing Image Graceful Fallback ---
+  // --- 6. Missing Image Graceful Fallback ---
   function setupImageFallbacks() {
     document.querySelectorAll('img').forEach((img) => {
       img.addEventListener('error', function () {
@@ -316,8 +192,7 @@
     });
   }
 
-  // --- 8. Event Listeners Initialization ---
-  // --- 8. Scroll-Linked Owner Photo Morph to Navbar Circle ---
+  // --- 7. Scroll-Linked Owner Photo Morph to Navbar Circle ---
   function initOwnerPhotoMorph() {
     const morphEl = document.getElementById('scrollMorphAvatar');
     const navbarEmblem = document.getElementById('navbarEmblem');
@@ -421,7 +296,7 @@
     onScrollOrTouch();
   }
 
-  // --- 9. Event Listeners Initialization ---
+  // --- 8. Event Listeners Initialization ---
   function initEventListeners() {
     // Mobile Drawer
     if (mobileToggle) {
@@ -469,7 +344,6 @@
 
   function onReady() {
     hydrateDynamicLinks();
-    initCarousel();
     initScrollSpy();
     setupImageFallbacks();
     initOwnerPhotoMorph();

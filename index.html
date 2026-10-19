@@ -73,7 +73,7 @@
   <header class="site-header" id="siteHeader">
     <div class="container header-container">
       <!-- Brand Logo / Emblem with Owner Avatar Morph Dock -->
-      <a href="#hero" class="brand-identity" aria-label="Sri Venkateswara Electrical & Rewinding Works Home">
+      <a href="#bio" class="brand-identity" aria-label="Sri Venkateswara Electrical & Rewinding Works Home">
         <div class="brand-emblem" id="navbarEmblem" aria-hidden="true">
           <img src="public/images/owner-avatar.webp" alt="Kamesh" class="navbar-avatar-img" id="navbarAvatarImg">
           <svg class="navbar-icon-spark" id="navbarIconSpark" viewBox="0 0 24 24" fill="currentColor">
@@ -86,13 +86,11 @@
         </div>
       </a>
 
-      <!-- Desktop Navigation Links -->
+      <!-- Desktop Navigation Links: Bio, Details, Services -->
       <nav class="desktop-nav" aria-label="Main Navigation">
-        <a href="#card" class="nav-link">Digital Card</a>
-        <a href="#about" class="nav-link">About</a>
+        <a href="#bio" class="nav-link">Bio</a>
+        <a href="#details" class="nav-link">Contact &amp; Location</a>
         <a href="#services" class="nav-link">Services</a>
-        <a href="#gallery" class="nav-link">Our Work</a>
-        <a href="#location" class="nav-link">Location</a>
       </nav>
 
       <!-- Header Action & Mobile Menu Toggle -->
@@ -117,24 +115,16 @@
   <!-- Mobile Dropdown Drawer -->
   <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
     <nav class="mobile-nav-list" aria-label="Mobile Navigation">
-      <a href="#card" class="mobile-nav-link">
-        <span>Digital Business Card</span>
+      <a href="#bio" class="mobile-nav-link">
+        <span>Bio &amp; About Kamesh</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
-      <a href="#about" class="mobile-nav-link">
-        <span>About Workshop &amp; Owner</span>
+      <a href="#details" class="mobile-nav-link">
+        <span>Phone, Location &amp; Card</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
       <a href="#services" class="mobile-nav-link">
         <span>Services &amp; Repairs</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-      </a>
-      <a href="#gallery" class="mobile-nav-link">
-        <span>Workshop Photo Gallery</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-      </a>
-      <a href="#location" class="mobile-nav-link">
-        <span>Location &amp; Directions</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
     </nav>
@@ -156,9 +146,9 @@
 
   <main id="main-content">
     <!-- =========================================================================
-         Hero Section
+         1. BIO SECTION (Owner Photo First, Identity & Story)
          ========================================================================= -->
-    <section class="hero-section" id="hero">
+    <section class="hero-section" id="bio">
       <div class="hero-pattern" aria-hidden="true"></div>
       <div class="container hero-grid">
         <!-- Hero Owner Photo Spotlight Frame (Appears FIRST before introduction) -->
@@ -181,11 +171,11 @@
           </div>
         </div>
 
-        <!-- Hero Text & CTA (Introduction) -->
+        <!-- Bio Content & Story -->
         <div class="hero-content">
           <div class="hero-badge-pill">
             <span class="pulse-dot" aria-hidden="true"></span>
-            <span>Verified Local Business • Innespeta, Rajahmundry</span>
+            <span>Verified Local Workshop • Innespeta, Rajahmundry</span>
           </div>
 
           <h1 class="hero-title">
@@ -197,13 +187,13 @@
           </div>
 
           <div class="hero-owner-tag">
-            <span>Proprietor:</span>
+            <span>Proprietor &amp; Master Technician:</span>
             <strong>Kamesh</strong>
             <span class="hero-owner-telugu">(వి. కామేష్)</span>
           </div>
 
           <p class="hero-description">
-            Dedicated electrical appliance servicing and motor rewinding workshop located in Innespeta, Rajahmundry. Expert repair for electric motors, washing machines, refrigerators, air conditioners, water heaters, and home appliances.
+            Dedicated electrical appliance servicing and precision motor rewinding workshop located in Innespeta, Rajahmundry. Managed directly by <strong>Kamesh</strong> with extensive hands-on expertise in rewinding electric motors, repairing washing machines, refrigerators, air conditioners, water heaters, and home appliances. Customers deal directly with Kamesh—guaranteeing genuine diagnosis, transparent pricing, and dependable repairs.
           </p>
 
           <div class="hero-cta-group">
@@ -221,24 +211,22 @@
               <span>WhatsApp Us</span>
             </a>
 
-            <a href="#gallery" class="btn btn-secondary-outline">
+            <a href="#services" class="btn btn-secondary-outline">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
               </svg>
-              <span>View Our Work</span>
+              <span>View Services</span>
             </a>
           </div>
 
           <div class="hero-badges-row">
             <div class="hero-mini-badge">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span>Motor Rewinding</span>
+              <span>Motor Rewinding Specialist</span>
             </div>
             <div class="hero-mini-badge">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span>Appliance Servicing</span>
+              <span>All Home Appliances Serviced</span>
             </div>
             <div class="hero-mini-badge">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
@@ -250,15 +238,15 @@
     </section>
 
     <!-- =========================================================================
-         Digital Visiting Card Section
+         2. DETAILS SECTION (Phone Numbers, Location & Visiting Card)
          ========================================================================= -->
-    <section class="visiting-card-section section-padding" id="card">
+    <section class="visiting-card-section section-padding" id="details">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge">Verified Business Card</span>
-          <h2 class="section-title">Digital Visiting Card</h2>
+          <span class="section-badge">Contact &amp; Location</span>
+          <h2 class="section-title">Phone Numbers, Location &amp; Visiting Card</h2>
           <p class="section-subtitle">
-            Save Sri Venkateswara Electrical contact details to your smartphone or initiate direct service communication with one tap.
+            Call Kamesh directly, start a WhatsApp chat, get turn-by-turn Google Maps directions, or save the contact file to your mobile phone.
           </p>
         </div>
 
@@ -305,7 +293,7 @@
                   <div class="card-contact-data">
                     <span class="card-contact-label">Primary Mobile &amp; WhatsApp</span>
                     <a href="tel:+919866394687" class="card-contact-value" data-action="phone">+91 9866394687</a>
-                    <span class="card-contact-sub">Available for repair calls</span>
+                    <span class="card-contact-sub">Available for repairs &amp; inquiries</span>
                   </div>
                 </div>
 
@@ -318,7 +306,7 @@
                   <div class="card-contact-data">
                     <span class="card-contact-label">Alternative Phone (Visiting Card)</span>
                     <a href="tel:+918499909666" class="card-contact-value">+91 8499909666</a>
-                    <span class="card-contact-sub">Shop contact line</span>
+                    <span class="card-contact-sub">Workshop direct line</span>
                   </div>
                 </div>
 
@@ -330,7 +318,7 @@
                     </svg>
                   </div>
                   <div class="card-contact-data">
-                    <span class="card-contact-label">Workshop Address</span>
+                    <span class="card-contact-label">Workshop Address &amp; Location</span>
                     <span class="card-contact-value">D.No. 36-7-12, Innespeta, Opposite State Bank, Rajahmundry</span>
                     <span class="card-contact-sub" lang="te">డోర్ నెం. 36-7-12, ఇన్నాపేట, స్టేట్ బ్యాంక్ ఎదురుగా, రాజమండ్రి</span>
                   </div>
@@ -403,87 +391,7 @@
     </section>
 
     <!-- =========================================================================
-         About Section
-         ========================================================================= -->
-    <section class="about-section section-padding" id="about">
-      <div class="container">
-        <div class="about-grid">
-          <!-- Owner Image Showcase -->
-          <div class="about-image-card">
-            <div class="about-photo-wrap">
-              <picture>
-                <source srcset="public/images/owner.webp" type="image/webp">
-                <img src="public/images/owner.png" alt="Kamesh, owner of Sri Venkateswara Electrical & Rewinding Works" width="543" height="724" loading="lazy" data-fallback="public/images/owner.jpg">
-              </picture>
-            </div>
-            <div class="about-caption-box">
-              <div class="about-caption-text">
-                <strong>Kamesh (వి. కామేష్)</strong>
-                <span>Lead Technician &amp; Workshop Owner</span>
-              </div>
-              <a href="tel:+919866394687" class="btn btn-whatsapp" style="padding: 0.5rem 0.85rem; font-size: 0.8125rem;" data-action="phone">
-                Call Direct
-              </a>
-            </div>
-          </div>
-
-          <!-- About Text Content -->
-          <div class="about-text-content">
-            <span class="section-badge">Local Workshop Identity</span>
-            <h2>Direct Service &amp; Rewinding Works by Kamesh</h2>
-            
-            <p class="about-lead">
-              Sri Venkateswara Electrical &amp; Rewinding Works is an established local electrical workshop situated in Innespeta, Rajahmundry, directly opposite State Bank.
-            </p>
-
-            <p class="about-body">
-              Managed directly by proprietor Kamesh, the workshop provides thorough repairs and rewinding services for both domestic appliances and electric motors. When you contact us, you speak directly with the technician who handles the diagnostics and repair work.
-            </p>
-
-            <div class="about-highlights-list">
-              <div class="about-highlight-item">
-                <div class="about-highlight-icon" aria-hidden="true">✓</div>
-                <div class="about-highlight-text">
-                  <strong>Direct Proprietor Contact:</strong> No customer care queues or third-party brokers. Speak directly with Kamesh.
-                </div>
-              </div>
-
-              <div class="about-highlight-item">
-                <div class="about-highlight-icon" aria-hidden="true">✓</div>
-                <div class="about-highlight-text">
-                  <strong>Comprehensive Electrical Services:</strong> Handling electric motors, washing machines, refrigerators, air conditioners, and kitchen appliances.
-                </div>
-              </div>
-
-              <div class="about-highlight-item">
-                <div class="about-highlight-icon" aria-hidden="true">✓</div>
-                <div class="about-highlight-text">
-                  <strong>Convenient Innespeta Location:</strong> Located right opposite State Bank in Rajahmundry, accessible for dropping off appliances and motors.
-                </div>
-              </div>
-            </div>
-
-            <div class="hero-cta-group" style="margin-bottom: 0;">
-              <a href="tel:+919866394687" class="btn btn-primary-phone" data-action="phone">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-                Call +91 9866394687
-              </a>
-              <a href="https://maps.app.goo.gl/VTHYkzrRNHAbTTAW9" target="_blank" rel="noopener noreferrer" class="btn btn-secondary-outline" style="color: var(--color-navy); border-color: var(--color-border); background: var(--color-bg-muted);" data-action="directions">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polygon points="3 11 22 2 13 21 11 13 3 11"/>
-                </svg>
-                Find On Google Maps
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         Verified Services Section
+         3. SERVICES SECTION
          ========================================================================= -->
     <section class="services-section section-padding" id="services">
       <div class="container">
@@ -491,258 +399,235 @@
           <span class="section-badge">Verified Offerings</span>
           <h2 class="section-title">Electrical Appliance &amp; Rewinding Services</h2>
           <p class="section-subtitle">
-            All services listed below are confirmed from official workshop materials. Readily editable via business-config.js.
+            Expert diagnostics, motor rewinding, and appliance repairs performed directly at our Innespeta workshop in Rajahmundry.
           </p>
         </div>
 
         <div class="services-grid" id="servicesContainer">
           <!-- Card 1: Motor Rewinding -->
           <article class="service-card">
-            <div>
-              <div class="service-card-top">
-                <div class="service-icon-box" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                  </svg>
-                </div>
-                <span class="service-badge">Workshop Specialty</span>
-              </div>
-              <h3 class="service-title">Motor Rewinding Works</h3>
-              <span class="service-telugu-title" lang="te">మోటార్లు రీ-వైండింగ్</span>
-              <p class="service-desc">
-                Complete copper rewinding and coil replacement for domestic water pump motors, ceiling fans, air cooler motors, and induction motors.
-              </p>
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 3v6"/>
+                <path d="M12 15v6"/>
+                <path d="M3 12h6"/>
+                <path d="M15 12h6"/>
+              </svg>
             </div>
-            <div class="service-tags">
-              <span class="service-tag">Pumps</span>
-              <span class="service-tag">Fans</span>
-              <span class="service-tag">Copper Coils</span>
-              <span class="service-tag">Motors</span>
+            <div class="service-content">
+              <span class="service-telugu" lang="te">మోటార్ రీవైండింగ్</span>
+              <h3 class="service-title">Motor Rewinding &amp; Coil Works</h3>
+              <p class="service-desc">
+                Precision copper coil rewinding, insulation replacement, and bench testing for single-phase &amp; three-phase motors, submersible pumps, and fan motors.
+              </p>
+              <ul class="service-feature-list">
+                <li>High-grade copper winding wire</li>
+                <li>Slot insulation &amp; varnish baking</li>
+                <li>Full load running diagnostics</li>
+              </ul>
             </div>
           </article>
 
-          <!-- Card 2: Washing Machines -->
+          <!-- Card 2: Washing Machine -->
           <article class="service-card">
-            <div>
-              <div class="service-card-top">
-                <div class="service-icon-box" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="4" y="2" width="16" height="20" rx="2"/>
-                    <circle cx="12" cy="13" r="5"/>
-                    <circle cx="12" cy="6" r="1"/>
-                  </svg>
-                </div>
-                <span class="service-badge">Major Appliance</span>
-              </div>
-              <h3 class="service-title">Washing Machine Repair</h3>
-              <span class="service-telugu-title" lang="te">వాషింగ్ మిషన్లు రిపేర్</span>
-              <p class="service-desc">
-                Servicing semi-automatic and automatic machines: motor replacement, spin issues, drainage faults, agitation problems, and wiring checks.
-              </p>
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2" width="16" height="20" rx="2"/>
+                <circle cx="12" cy="13" r="5"/>
+                <line x1="8" y1="6" x2="8.01" y2="6"/>
+                <line x1="12" y1="6" x2="12.01" y2="6"/>
+              </svg>
             </div>
-            <div class="service-tags">
-              <span class="service-tag">Semi-Auto</span>
-              <span class="service-tag">Fully-Auto</span>
-              <span class="service-tag">Spin Motors</span>
-              <span class="service-tag">Draining</span>
+            <div class="service-content">
+              <span class="service-telugu" lang="te">వాషింగ్ మెషిన్ సర్వీస్</span>
+              <h3 class="service-title">Washing Machine Service &amp; Repair</h3>
+              <p class="service-desc">
+                Comprehensive repair for semi-automatic and fully-automatic machines, including spin/wash motor replacement, drum bearing noise, drainage, and timer issues.
+              </p>
+              <ul class="service-feature-list">
+                <li>Motor rewinding &amp; replacement</li>
+                <li>Gearbox &amp; pulsator repairs</li>
+                <li>Drain pump &amp; water valve fixing</li>
+              </ul>
             </div>
           </article>
 
-          <!-- Card 3: Refrigerators -->
+          <!-- Card 3: Refrigerator / Fridge -->
           <article class="service-card">
-            <div>
-              <div class="service-card-top">
-                <div class="service-icon-box" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="4" y="2" width="16" height="20" rx="2"/>
-                    <line x1="4" y1="10" x2="20" y2="10"/>
-                    <line x1="8" y1="5" x2="8" y2="7"/>
-                    <line x1="8" y1="14" x2="8" y2="17"/>
-                  </svg>
-                </div>
-                <span class="service-badge">Major Appliance</span>
-              </div>
-              <h3 class="service-title">Refrigerator / Fridge Repair</h3>
-              <span class="service-telugu-title" lang="te">ఫ్రిజ్ లు సర్వీస్ &amp; రిపేర్</span>
-              <p class="service-desc">
-                Cooling troubleshooting, compressor wiring checks, defrost problem rectification, thermostat replacement, and general electrical maintenance.
-              </p>
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2"/>
+                <line x1="5" y1="10" x2="19" y2="10"/>
+                <line x1="9" y1="6" x2="9" y2="8"/>
+                <line x1="9" y1="14" x2="9" y2="17"/>
+              </svg>
             </div>
-            <div class="service-tags">
-              <span class="service-tag">Single Door</span>
-              <span class="service-tag">Double Door</span>
-              <span class="service-tag">Compressor</span>
-              <span class="service-tag">Thermostat</span>
+            <div class="service-content">
+              <span class="service-telugu" lang="te">ఫ్రిజ్ సర్వీస్ &amp; గ్యాస్ చార్జింగ్</span>
+              <h3 class="service-title">Refrigerator / Fridge Repairs</h3>
+              <p class="service-desc">
+                Single and double-door refrigerator servicing, compressor wiring, thermostat diagnostics, cooling coil leakage repairs, and gas replenishment.
+              </p>
+              <ul class="service-feature-list">
+                <li>Cooling troubleshooting &amp; gas charging</li>
+                <li>Compressor relay &amp; capacitor check</li>
+                <li>Thermostat &amp; defrost timer service</li>
+              </ul>
             </div>
           </article>
 
-          <!-- Card 4: Air Conditioners -->
+          <!-- Card 4: Air Conditioners (AC) -->
           <article class="service-card">
-            <div>
-              <div class="service-card-top">
-                <div class="service-icon-box" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="2" y1="6" x2="22" y2="6"/>
-                    <line x1="2" y1="12" x2="22" y2="12"/>
-                    <rect x="4" y="2" width="16" height="20" rx="2"/>
-                    <circle cx="12" cy="16" r="2"/>
-                  </svg>
-                </div>
-                <span class="service-badge">Cooling Appliance</span>
-              </div>
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="6" width="20" height="10" rx="2"/>
+                <line x1="6" y1="12" x2="18" y2="12"/>
+                <line x1="6" y1="16" x2="18" y2="16"/>
+              </svg>
+            </div>
+            <div class="service-content">
+              <span class="service-telugu" lang="te">ఏసీ సర్వీసింగ్ &amp; రిపేర్</span>
               <h3 class="service-title">Air Conditioner (AC) Service</h3>
-              <span class="service-telugu-title" lang="te">ఎ.సి.లు సర్వీస్ &amp; రిపేర్</span>
               <p class="service-desc">
-                Electrical diagnostics, start capacitor replacements, indoor blower motor repairs, electrical circuit checks, and routine unit upkeep.
+                Split and window AC electrical diagnostics, blower fan motor servicing, capacitor replacement, coil cleaning, and cooling optimization.
               </p>
-            </div>
-            <div class="service-tags">
-              <span class="service-tag">Split AC</span>
-              <span class="service-tag">Window AC</span>
-              <span class="service-tag">Blower Motors</span>
-              <span class="service-tag">Capacitors</span>
+              <ul class="service-feature-list">
+                <li>Blower fan motor rewinding</li>
+                <li>Electrical control wiring repair</li>
+                <li>General cleaning &amp; performance checks</li>
+              </ul>
             </div>
           </article>
 
-          <!-- Card 5: Water Heaters -->
+          <!-- Card 5: Geysers & Water Heaters -->
           <article class="service-card">
-            <div>
-              <div class="service-card-top">
-                <div class="service-icon-box" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                  </svg>
-                </div>
-                <span class="service-badge">Heating Appliance</span>
-              </div>
-              <h3 class="service-title">Water Heaters &amp; Geysers</h3>
-              <span class="service-telugu-title" lang="te">వాటర్ హీటర్లు రిపేర్</span>
-              <p class="service-desc">
-                Heating element replacements, thermostat checks, power cutoff switch repairs, and electrical wiring inspection for home geysers.
-              </p>
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v4"/>
+                <path d="M12 18v4"/>
+                <circle cx="12" cy="12" r="6"/>
+                <path d="M12 8a4 4 0 0 1 4 4"/>
+              </svg>
             </div>
-            <div class="service-tags">
-              <span class="service-tag">Instant Geysers</span>
-              <span class="service-tag">Storage Tanks</span>
-              <span class="service-tag">Coil Heating</span>
+            <div class="service-content">
+              <span class="service-telugu" lang="te">గీజర్ సర్వీస్</span>
+              <h3 class="service-title">Geyser &amp; Water Heater Repairs</h3>
+              <p class="service-desc">
+                Storage and instant water heater servicing, heating element replacement, thermostat calibration, thermal cutoff resets, and safety checks.
+              </p>
+              <ul class="service-feature-list">
+                <li>Heavy-duty copper heating elements</li>
+                <li>Thermostat &amp; safety cut-off repair</li>
+                <li>Current leakage &amp; earthing safety check</li>
+              </ul>
             </div>
           </article>
 
-          <!-- Card 6: Air Coolers & Fans -->
+          <!-- Card 6: Air Coolers, Ceiling & Table Fans -->
           <article class="service-card">
-            <div>
-              <div class="service-card-top">
-                <div class="service-icon-box" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M12 12c2.5-3 6-3 6 0s-3.5 3-6 0z"/>
-                    <path d="M12 12c-3-2.5-3-6 0-6s3 3.5 0 6z"/>
-                    <path d="M12 12c-2.5 3-6 3-6 0s3.5-3 6 0z"/>
-                    <path d="M12 12c3 2.5 3 6 0 6s-3-3.5 0-6z"/>
-                  </svg>
-                </div>
-                <span class="service-badge">Home Cooling</span>
-              </div>
-              <h3 class="service-title">Air Coolers &amp; Fans</h3>
-              <span class="service-telugu-title" lang="te">ఎయిర్ కూలర్స్ &amp; ఫ్యాన్లు</span>
-              <p class="service-desc">
-                Cooler submersible pump servicing, fan motor rewinding, speed switch repairs, bushing replacement, and seasonal checkups.
-              </p>
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 9V3a3 3 0 0 1 3 3v3"/>
+                <path d="M15 12h6a3 3 0 0 1-3 3h-3"/>
+                <path d="M12 15v6a3 3 0 0 1-3-3v-3"/>
+                <path d="M9 12H3a3 3 0 0 1 3-3h3"/>
+              </svg>
             </div>
-            <div class="service-tags">
-              <span class="service-tag">Desert Coolers</span>
-              <span class="service-tag">Ceiling Fans</span>
-              <span class="service-tag">Cooler Pumps</span>
+            <div class="service-content">
+              <span class="service-telugu" lang="te">కూలర్లు మరియు ఫ్యాన్లు</span>
+              <h3 class="service-title">Coolers, Ceiling &amp; Table Fans</h3>
+              <p class="service-desc">
+                Repair, bushing/bearing replacement, copper coil rewinding, water pump replacements for all models of air coolers and domestic fans.
+              </p>
+              <ul class="service-feature-list">
+                <li>Ceiling fan speed drop &amp; capacitor fix</li>
+                <li>Cooler water pump &amp; swing motor service</li>
+                <li>Noiseless bearing &amp; shaft fitting</li>
+              </ul>
             </div>
           </article>
 
           <!-- Card 7: Microwave Ovens -->
           <article class="service-card">
-            <div>
-              <div class="service-card-top">
-                <div class="service-icon-box" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="4" width="20" height="16" rx="2"/>
-                    <rect x="5" y="8" width="10" height="8" rx="1"/>
-                    <circle cx="18" cy="9" r="1"/>
-                    <circle cx="18" cy="13" r="1"/>
-                  </svg>
-                </div>
-                <span class="service-badge">Kitchen Appliance</span>
-              </div>
-              <h3 class="service-title">Microwave Oven Repair</h3>
-              <span class="service-telugu-title" lang="te">మైక్రోఓవెన్స్ రిపేర్</span>
-              <p class="service-desc">
-                Circuit fuse replacements, magnetron power circuit inspection, door switch rectifications, turntable motor repair, and heating diagnostics.
-              </p>
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="15" rx="2"/>
+                <rect x="4" y="7" width="11" height="9" rx="1"/>
+                <circle cx="18" cy="9" r="1"/>
+                <circle cx="18" cy="14" r="1"/>
+              </svg>
             </div>
-            <div class="service-tags">
-              <span class="service-tag">Convection</span>
-              <span class="service-tag">Grill</span>
-              <span class="service-tag">Turntable</span>
+            <div class="service-content">
+              <span class="service-telugu" lang="te">మైక్రోవేవ్ ఒవెన్ సర్వీస్</span>
+              <h3 class="service-title">Microwave Oven Repairs</h3>
+              <p class="service-desc">
+                Troubleshooting for no-heating issues, turntable motor replacements, high-voltage diode and capacitor tests, and fuse safety replacements.
+              </p>
+              <ul class="service-feature-list">
+                <li>Magnetron &amp; transformer inspection</li>
+                <li>Turntable plate motor replacement</li>
+                <li>Door interlock switch repairs</li>
+              </ul>
             </div>
           </article>
 
-          <!-- Card 8: Wet Grinders & Small Appliances -->
+          <!-- Card 8: Wet Grinders & Mixers -->
           <article class="service-card">
-            <div>
-              <div class="service-card-top">
-                <div class="service-icon-box" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="3"/>
-                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-                  </svg>
-                </div>
-                <span class="service-badge">Kitchen Appliance</span>
-              </div>
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 3h12l-2 14H8L6 3z"/>
+                <path d="M4 21h16"/>
+                <circle cx="12" cy="10" r="2"/>
+              </svg>
+            </div>
+            <div class="service-content">
+              <span class="service-telugu" lang="te">గ్రైండర్ &amp; మిక్సీ సర్వీస్</span>
               <h3 class="service-title">Wet Grinders &amp; Mixers</h3>
-              <span class="service-telugu-title" lang="te">గ్రైండర్లు &amp; ఇతర ఎలక్ట్రికల్</span>
               <p class="service-desc">
-                Wet grinder capacitor and motor servicing, belt tensioning, coupler replacements, armature work, and general electrical fixes.
+                Domestic and commercial wet grinder motor rewinding, belt replacement, center shaft alignment, and mixer grinder coupler/carbon brush servicing.
               </p>
-            </div>
-            <div class="service-tags">
-              <span class="service-tag">Wet Grinders</span>
-              <span class="service-tag">Drive Belts</span>
-              <span class="service-tag">Capacitors</span>
+              <ul class="service-feature-list">
+                <li>Armature &amp; field coil rewinding</li>
+                <li>Drive belt &amp; stone roller alignment</li>
+                <li>Overload protector &amp; switch replacement</li>
+              </ul>
             </div>
           </article>
 
-          <!-- Card 9: Appliance Trade (Buy / Sell / Repair) -->
+          <!-- Card 9: Used Appliances Buying, Selling & Exchange -->
           <article class="service-card">
-            <div>
-              <div class="service-card-top">
-                <div class="service-icon-box" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="17 1 21 5 17 9"/>
-                    <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
-                    <polyline points="7 23 3 19 7 15"/>
-                    <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
-                  </svg>
-                </div>
-                <span class="service-badge">Trade &amp; Exchange</span>
-              </div>
-              <h3 class="service-title">Appliance Buy, Sell &amp; Repair</h3>
-              <span class="service-telugu-title" lang="te">అమ్ముతాము, కొంటాము, రిపేర్ చేస్తాము</span>
-              <p class="service-desc">
-                We buy, sell, and refurbish pre-owned washing machines, refrigerators, and air conditioners in reliable working condition.
-              </p>
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="17 1 21 5 17 9"/>
+                <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                <polyline points="7 23 3 19 7 15"/>
+                <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+              </svg>
             </div>
-            <div class="service-tags">
-              <span class="service-tag">Washing Machines</span>
-              <span class="service-tag">Fridges</span>
-              <span class="service-tag">AC Units</span>
+            <div class="service-content">
+              <span class="service-telugu" lang="te">పాత వస్తువులు కొనడం / అమ్మడం</span>
+              <h3 class="service-title">Used Appliance Trade &amp; Exchange</h3>
+              <p class="service-desc">
+                Buying and selling of refurbished, tested electric motors, fans, washing machines, and household appliances at fair, honest workshop prices.
+              </p>
+              <ul class="service-feature-list">
+                <li>Pre-tested refurbished appliances</li>
+                <li>Old motor &amp; appliance trade-in</li>
+                <li>Honest assessment &amp; fair rates</li>
+              </ul>
             </div>
           </article>
         </div>
 
-        <!-- Banner for Service Inquiry -->
-        <div class="services-footer-banner">
-          <h3>Need an appliance checked or a motor rewound?</h3>
-          <p>
-            Call or message Kamesh with your appliance details or visit our shop in Innespeta, Rajahmundry.
-          </p>
-          <div class="banner-btn-group">
+        <!-- Direct CTA at Bottom of Services -->
+        <div class="services-cta-banner">
+          <div class="services-cta-content">
+            <h3>Need an Appliance Repaired or Motor Rewound?</h3>
+            <p>Speak directly with Kamesh. Fast diagnostics and dependable service in Rajahmundry.</p>
+          </div>
+          <div class="services-cta-buttons">
             <a href="tel:+919866394687" class="btn btn-primary-phone" data-action="phone">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -759,218 +644,27 @@
         </div>
       </div>
     </section>
-
-    <!-- =========================================================================
-         Work Photo Carousel Section
-         ========================================================================= -->
-    <section class="gallery-section section-padding" id="gallery">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Visual Workshop Reference</span>
-          <h2 class="section-title">Workshop &amp; Work Photographs</h2>
-          <p class="section-subtitle">
-            Browse our dedicated workshop stations. Touch swipe on mobile or use the navigation arrows.
-          </p>
-        </div>
-
-        <div class="carousel-container" aria-roledescription="carousel" aria-label="Workshop and work photo carousel">
-          <!-- Previous Button -->
-          <button type="button" class="carousel-btn prev" id="carouselPrev" aria-label="Previous slide">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="15 18 9 12 15 6"/>
-            </svg>
-          </button>
-
-          <!-- Carousel Track Wrapper -->
-          <div class="carousel-track-wrapper">
-            <div class="carousel-track" id="carouselTrack" tabindex="0" role="region" aria-live="polite">
-              <!-- Slide 1: Motor Rewinding -->
-              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 3: Motor Rewinding Station">
-                <picture>
-                  <source srcset="public/images/work-01.webp" type="image/webp">
-                  <img src="public/images/work-01.webp" alt="Motor Rewinding & Coil Works at Sri Venkateswara Electrical workshop" class="carousel-slide-img" width="800" height="500" loading="lazy">
-                </picture>
-                <div class="carousel-caption-overlay">
-                  <span class="slide-badge">Motor Rewinding Station</span>
-                  <h3 class="slide-title">Motor Rewinding &amp; Coil Works</h3>
-                  <p class="slide-desc">Precision copper coil winding, slot insulation, and bench testing for pump and fan motors.</p>
-                </div>
-              </div>
-
-              <!-- Slide 2: Major Appliances -->
-              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 3: Major Appliance Repair Bench">
-                <picture>
-                  <source srcset="public/images/work-02.webp" type="image/webp">
-                  <img src="public/images/work-02.webp" alt="Major Appliance Diagnostics and Repair Workbench" class="carousel-slide-img" width="800" height="500" loading="lazy">
-                </picture>
-                <div class="carousel-caption-overlay">
-                  <span class="slide-badge">Appliance Diagnostics</span>
-                  <h3 class="slide-title">Major Appliance Repair &amp; Service</h3>
-                  <p class="slide-desc">Washing machine motors, refrigerator compressor wiring, and air conditioner unit servicing.</p>
-                </div>
-              </div>
-
-              <!-- Slide 3: Inspection & Testing -->
-              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 3: Electrical Inspection & Diagnostics">
-                <picture>
-                  <source srcset="public/images/work-03.webp" type="image/webp">
-                  <img src="public/images/work-03.webp" alt="Electrical testing and quality diagnostics station" class="carousel-slide-img" width="800" height="500" loading="lazy">
-                </picture>
-                <div class="carousel-caption-overlay">
-                  <span class="slide-badge">Testing &amp; Inspection</span>
-                  <h3 class="slide-title">Electrical Testing &amp; Diagnostics</h3>
-                  <p class="slide-desc">Microwave ovens, water heater elements, and precision appliance electrical safety checks.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Next Button -->
-          <button type="button" class="carousel-btn next" id="carouselNext" aria-label="Next slide">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="9 18 15 12 9 6"/>
-            </svg>
-          </button>
-
-          <!-- Controls Bar: Indicators & Counter -->
-          <div class="carousel-controls-bar">
-            <div class="carousel-indicators" id="carouselIndicators" role="tablist" aria-label="Carousel slide controls">
-              <!-- Indicators dynamically rendered by script.js -->
-            </div>
-            <div class="carousel-counter" aria-hidden="true">
-              <span id="carouselCounterCurrent">1</span> / <span id="carouselCounterTotal">3</span>
-            </div>
-          </div>
-
-          <p class="carousel-note">
-            📸 Real workshop photos can be added to <code>public/images/work-01.webp</code>, <code>work-02.webp</code>, and <code>work-03.webp</code>.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         Location & Directions Section
-         ========================================================================= -->
-    <section class="location-section section-padding" id="location">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Visit Our Workshop</span>
-          <h2 class="section-title">Workshop Location &amp; Directions</h2>
-          <p class="section-subtitle">
-            Easily locate Sri Venkateswara Electrical &amp; Rewinding Works in Innespeta, Rajahmundry.
-          </p>
-        </div>
-
-        <div class="location-grid">
-          <!-- Address Card -->
-          <div class="location-info-card">
-            <div>
-              <div class="location-card-header">
-                <h3>Sri Venkateswara Electrical &amp; Rewinding Works</h3>
-                <span class="telugu-subtext" lang="te">శ్రీ వెంకటేశ్వర రీ-వైండింగ్ వర్క్స్</span>
-              </div>
-
-              <div class="location-address-box">
-                <div class="location-street">Door No. 36-7-12, Innespeta</div>
-                <div class="location-landmark">Opposite State Bank</div>
-                <div class="location-city">Rajahmundry, Andhra Pradesh, India</div>
-                <div class="location-telugu-addr" lang="te">
-                  డోర్ నెం. 36-7-12, ఇన్నాపేట, స్టేట్ బ్యాంక్ ఎదురుగా, రాజమండ్రి
-                </div>
-              </div>
-
-              <div style="margin-bottom: 1.5rem;">
-                <div style="font-size: 0.875rem; font-weight: 700; color: var(--color-navy); margin-bottom: 0.25rem;">Proprietor &amp; Lead Technician:</div>
-                <div style="font-size: 1rem; color: var(--color-copper); font-weight: 700;">Kamesh (వి. కామేష్)</div>
-                <div style="font-size: 0.875rem; color: var(--color-text-muted); margin-top: 0.25rem;">Direct Cell: +91 9866394687 / +91 8499909666</div>
-              </div>
-            </div>
-
-            <div class="location-action-btns">
-              <a href="https://maps.app.goo.gl/VTHYkzrRNHAbTTAW9" target="_blank" rel="noopener noreferrer" class="btn btn-primary-phone" data-action="directions" style="flex: 1;" aria-label="Open workshop in Google Maps application">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polygon points="3 11 22 2 13 21 11 13 3 11"/>
-                </svg>
-                Open in Google Maps
-              </a>
-              <a href="tel:+919866394687" class="btn btn-secondary-outline" style="color: var(--color-navy); border-color: var(--color-border); background: var(--color-bg-muted); flex: 1;" data-action="phone">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-                Call for Directions
-              </a>
-            </div>
-          </div>
-
-          <!-- Visual Map Launch Card -->
-          <div class="map-visual-card">
-            <div class="map-card-canvas">
-              <div class="map-canvas-content">
-                <div class="map-pin-icon" aria-hidden="true">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                    <circle cx="12" cy="10" r="3"/>
-                  </svg>
-                </div>
-                <h4>Sri Venkateswara Electrical Workshop</h4>
-                <p>Innespeta, Opposite State Bank, Rajahmundry</p>
-                <a href="https://maps.app.goo.gl/VTHYkzrRNHAbTTAW9" target="_blank" rel="noopener noreferrer" class="btn btn-primary-phone" data-action="directions" style="width: 100%;">
-                  Get Driving Directions
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- =========================================================================
-       Site Footer
+       Minimal Clean Footer
        ========================================================================= -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h4>Sri Venkateswara Electrical &amp; Rewinding Works</h4>
-          <span class="footer-telugu" lang="te">శ్రీ వెంకటేశ్వర రీ-వైండింగ్ వర్క్స్</span>
-          <p>
-            Electrical appliance servicing, rewinding, repairs, and appliance exchange managed directly by Kamesh in Rajahmundry.
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <h5 class="footer-col-title">Quick Navigation</h5>
-          <nav class="footer-links-list" aria-label="Footer Navigation">
-            <a href="#card" class="footer-link">Digital Visiting Card</a>
-            <a href="#about" class="footer-link">About Workshop</a>
-            <a href="#services" class="footer-link">Services &amp; Repairs</a>
-            <a href="#gallery" class="footer-link">Work Photo Gallery</a>
-            <a href="#location" class="footer-link">Location &amp; Map</a>
-          </nav>
-        </div>
-
-        <div class="footer-col">
-          <h5 class="footer-col-title">Contact &amp; Location</h5>
-          <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <span>Kamesh (వి. కామేష్)</span>
-          </div>
-          <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <a href="tel:+919866394687" data-action="phone">+91 9866394687</a>
-          </div>
-          <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>D.No. 36-7-12, Innespeta, Rajahmundry</span>
-          </div>
-        </div>
+    <div class="container footer-simple-wrap">
+      <div class="footer-simple-brand">
+        <h4>Sri Venkateswara Electrical &amp; Rewinding Works</h4>
+        <span class="footer-telugu" lang="te">శ్రీ వెంకటేశ్వర రీ-వైండింగ్ వర్క్స్</span>
+        <p>Proprietor: Kamesh (వి. కామేష్) • Door No. 36-7-12, Opposite State Bank, Innespeta, Rajahmundry</p>
       </div>
-
+      <div class="footer-simple-links">
+        <a href="tel:+919866394687" class="footer-simple-phone" data-action="phone">+91 9866394687</a>
+        <span>•</span>
+        <a href="tel:+918499909666" class="footer-simple-phone">+91 8499909666</a>
+        <span>•</span>
+        <a href="https://maps.app.goo.gl/VTHYkzrRNHAbTTAW9" target="_blank" rel="noopener noreferrer" class="footer-simple-map" data-action="directions">Google Maps Location</a>
+      </div>
       <div class="footer-bottom-bar">
         <p>&copy; 2026 Sri Venkateswara Electrical &amp; Rewinding Works. All rights reserved.</p>
-        <p>Door No. 36-7-12, Opposite State Bank, Innespeta, Rajahmundry</p>
       </div>
     </div>
   </footer>
