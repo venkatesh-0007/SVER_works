@@ -2,5 +2,17 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "outputDirectory": ".",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/sri-venkateswara-electrical",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sri-venkateswara-electrical/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    }
+  ]
 }

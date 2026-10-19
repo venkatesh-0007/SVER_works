@@ -1,3 +1,22 @@
+# macOS system files
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows system files
 Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor & IDE directories
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Log and temporary files
 *.log
+.temp/
+.cache/

@@ -2,33 +2,43 @@
 
 A complete, production-ready, mobile-first business website and digital visiting card for **Sri Venkateswara Electrical & Rewinding Works**, owned and operated by **Kamesh** in Innespeta, Rajahmundry.
 
-Designed specifically for smartphone customers to quickly understand services, view authentic workshop photos, call the shop, start a WhatsApp conversation, navigate via Google Maps, and save the business contact (.vcf) with one tap.
+Designed specifically for smartphone customers to quickly understand services, view authentic workshop photos, call the shop with one tap, start a WhatsApp conversation, navigate via Google Maps, and save the business contact (.vcf) directly to their address book.
 
 ---
 
-## 📁 Project Structure
+## 📁 Repository Structure
 
 ```text
-sri-venkateswara-electrical/
-├── index.html              # Semantic HTML5 single-page application
-├── styles.css              # Custom mobile-first responsive CSS (vanilla, no frameworks)
-├── script.js               # Interactive features (vCard, carousel, modal, links)
+.
+├── index.html              # Main semantic HTML5 single-page application (root entry point)
+├── styles.css              # Custom mobile-first responsive CSS (design system, animations)
+├── script.js               # Interactive features (vCard, carousel, modal, scroll morph)
 ├── business-config.js      # Centralized business information and service catalog
-├── favicon.svg             # Electrical motor coil and spark favicon
-├── README.md               # Documentation and deployment guide
-└── public/
-    └── images/
-        ├── owner.webp               # High-performance WebP photo of owner Kamesh
-        ├── owner.png                # Original transparent cutout of owner photo
-        ├── owner.jpg                # Fallback JPEG version of owner photo
-        ├── visiting-card-front.webp # Optimized WebP of printed visiting card
-        ├── visiting-card-front.png  # High-res visiting card source image
-        ├── visiting-card-front.jpg  # Fallback JPEG of visiting card
-        ├── work-01.webp             # Motor rewinding station workshop photo slot
-        ├── work-02.webp             # Appliance repair bench workshop photo slot
-        ├── work-03.webp             # Electrical diagnostics workshop photo slot
-        ├── logo.svg                 # Scalable vector brand logo
-        └── logo.png                 # Crisp raster brand logo
+├── favicon.svg             # Scalable vector favicon (electrical coil badge)
+├── favicon.png             # High-DPI raster favicon (owner photo badge)
+├── apple-touch-icon.png    # iOS home screen bookmark icon
+├── vercel.json             # Vercel deployment configuration (outputDirectory, cleanUrls)
+├── .gitignore              # Git ignore rules for OS and editor artifacts
+├── README.md               # Project documentation and deployment guide
+├── public/                 # Production-optimized public web assets
+│   └── images/
+│       ├── logo.svg                 # Scalable vector brand logo
+│       ├── logo.png                 # Crisp raster brand logo
+│       ├── owner-avatar.webp        # Circular owner photo for navbar and morph animation
+│       ├── owner-avatar.png         # Fallback PNG of owner avatar
+│       ├── owner.webp               # High-performance WebP photo of owner Kamesh
+│       ├── owner.png                # Transparent cutout of owner photo
+│       ├── owner.jpg                # Fallback JPEG version of owner photo
+│       ├── visiting-card-front.webp # Optimized WebP of printed visiting card
+│       ├── visiting-card-front.png  # High-res visiting card source image
+│       ├── visiting-card-front.jpg  # Fallback JPEG of visiting card
+│       ├── work-01.webp             # Motor rewinding station workshop photo slot
+│       ├── work-02.webp             # Appliance repair bench workshop photo slot
+│       └── work-03.webp             # Electrical diagnostics workshop photo slot
+└── raw-assets/             # Original unedited customer source files
+    ├── README.md                            # Documentation on source assets
+    ├── Owner Photo Background Removed.png   # Original high-res cutout
+    └── Visiting Card.png                    # Original visiting card scan
 ```
 
 ---
@@ -44,18 +54,21 @@ sri-venkateswara-electrical/
    - Stays thumb-friendly at the bottom on mobile devices (< 860px) with Call, WhatsApp, and Directions buttons.
    - Respects mobile viewport safe area (`env(safe-area-inset-bottom)`).
    - Content has automatic bottom padding so no text is ever obscured.
-3. **Digital Visiting Card & Modal**:
+3. **Owner Photo First & Scroll-Linked Morph**:
+   - Owner's photo is visible immediately upon page load.
+   - As the user scrolls, the hero photo fluidly scales and docks directly into the navbar brand circle emblem.
+4. **Digital Visiting Card & Modal**:
    - Displays all confirmed details matching the official visiting card.
    - Includes high-resolution preview with an accessible modal lightbox to view the full card without distortion.
-4. **Touch-Friendly Work Carousel**:
+5. **Touch-Friendly Work Carousel**:
    - Supports touch swipe gestures on mobile and keyboard navigation.
    - Prev/Next controls, active slide indicators, and slide counter.
    - Built with CSS scroll snap for smooth 60fps performance and zero layout shift (`aspect-ratio: 16 / 10`).
    - Respects `prefers-reduced-motion`.
-5. **Verified Service Offerings**:
+6. **Verified Service Offerings**:
    - Strictly derived from the official visiting card: Motor Rewinding, Washing Machines, Refrigerators, ACs, Water Heaters (Geysers), Air Coolers & Fans, Microwave Ovens, Wet Grinders, and Used Appliance Trade.
    - English and Telugu service titles.
-6. **Centralized Configuration (`business-config.js`)**:
+7. **Centralized Configuration (`business-config.js`)**:
    - Update phone numbers, WhatsApp text, address, or service cards in one place without touching HTML.
 
 ---
@@ -131,40 +144,17 @@ Open `business-config.js` in any text editor. You can update:
 
 ---
 
-## 🌐 Free Static Hosting Deployment Guide
+## 🌐 Deployment Guide
 
-### Method A: Deploy on GitHub Pages (Recommended - 100% Free Forever)
-1. Initialize a git repository if not already done:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit of Sri Venkateswara Electrical website"
-   ```
-2. Create a new repository on [GitHub](https://github.com) named `sri-venkateswara-electrical`.
-3. Push your code:
-   ```bash
-   git remote add origin https://github.com/<your-username>/sri-venkateswara-electrical.git
-   git branch -M main
-   git push -u origin main
-   ```
-4. Go to **Settings** > **Pages** in your GitHub repository.
-5. Under **Branch**, select `main` and folder `/ (root)`, then click **Save**.
-6. Your website will be live in 1–2 minutes at:
-   `https://<your-username>.github.io/sri-venkateswara-electrical/`
+### Vercel (Automatic GitHub CI/CD)
+The repository includes an optimized [vercel.json](file:///Users/venkatesh/Documents/Projects/web/vercel.json):
+1. Connect your repository `https://github.com/venkatesh-0007/SVER_works` in the [Vercel Dashboard](https://vercel.com).
+2. Framework Preset: **Other** (Pure Static HTML).
+3. Root Directory: `./` (leave default).
+4. Build / Output commands: Leave blank / disabled.
+5. Every push to `main` deploys automatically to your Vercel URL.
 
-### Method B: Deploy on Vercel (100% Free)
-1. Install Vercel CLI (optional) or push to GitHub and import into [Vercel](https://vercel.com).
-2. If using Vercel CLI:
-   ```bash
-   npx vercel
-   ```
-3. Follow the prompts:
-   - Set project name: `sri-venkateswara-electrical`
-   - Framework preset: `Other` (Static HTML)
-   - Root directory: `./`
-4. Instant live URL with global CDN: `https://sri-venkateswara-electrical.vercel.app`
-
-### Method C: Deploy on Netlify (100% Free)
-1. Go to [Netlify Drop](https://app.netlify.com/drop).
-2. Drag and drop the `sri-venkateswara-electrical` folder onto the webpage.
-3. Your site is live immediately on a free `.netlify.app` subdomain or your own custom domain.
+### GitHub Pages
+1. Go to **Settings** > **Pages** in your GitHub repository.
+2. Under **Branch**, select `main` and folder `/ (root)`, then click **Save**.
+3. Your website will be live in 1–2 minutes.
