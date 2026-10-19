@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="navGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14243A" />
+      <stop offset="100%" stop-color="#1E3A5F" />
+    </linearGradient>
+    <linearGradient id="voltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC837" />
+      <stop offset="100%" stop-color="#F5A623" />
+    </linearGradient>
+  </defs>
+  <!-- Background Badge -->
+  <rect width="64" height="64" rx="14" fill="url(#navGrad)" />
+  <!-- Motor Rewinding Stator Ring (Subtle) -->
+  <circle cx="32" cy="32" r="23" fill="none" stroke="#F5A623" stroke-width="2" stroke-dasharray="4 2" opacity="0.65" />
+  <circle cx="32" cy="32" r="18" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3" />
+  <!-- Electric Spark / Bolt Accent -->
+  <path d="M35 13 L23 33 L32 33 L29 51 L43 29 L33 29 Z" fill="url(#voltGrad)" />
+</svg>
